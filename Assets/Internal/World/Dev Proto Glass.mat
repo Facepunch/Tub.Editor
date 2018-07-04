@@ -7,19 +7,20 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Dev Proto Glass
-  m_Shader: {fileID: 4800000, guid: 4e0921f65df35664f881a58e05324146, type: 3}
-  m_ShaderKeywords: _DETAIL_MULX2 _NORMALMAP
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    RenderType: Transparent
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: fd0afcd96c4b40640a7bcc3b10bae227, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -31,7 +32,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailNormalMap:
-        m_Texture: {fileID: 2800000, guid: fd0afcd96c4b40640a7bcc3b10bae227, type: 3}
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -78,20 +79,20 @@ Material:
     - _ColorMask: 15
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 0
-    - _DstBlend: 0
+    - _DstBlend: 10
     - _EmissionScaleUI: 0
     - _EmissiveMapFactor: 1
     - _EmissiveMultiplier: 1
     - _FresnelIntensity: 20.36
     - _FresnelPower: 0.08
     - _GlossMapScale: 1
-    - _Glossiness: 0.67
+    - _Glossiness: 0.397
     - _GlossinessMapFactor: 0.79
     - _GlossyReflections: 1
     - _IOR: 42.19
     - _MainTexFactor: 0.327
-    - _Metallic: 0
-    - _Mode: 0
+    - _Metallic: 0.289
+    - _Mode: 3
     - _NormalMapIntensity: 0.02
     - _OcclusionStrength: 1
     - _Parallax: 0.0102
@@ -109,9 +110,9 @@ Material:
     - _UVSec: 0
     - _UsingMetallicGlossMap: 0
     - _VertexColorStrength: 1
-    - _ZWrite: 1
+    - _ZWrite: 0
     m_Colors:
-    - _Color: {r: 0.8349056, g: 0.8776255, b: 1, a: 1}
+    - _Color: {r: 0.8349056, g: 0.8776255, b: 1, a: 0.3137255}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColorUI: {r: 1, g: 1, b: 1, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 0}
