@@ -10,17 +10,31 @@ public class ExportMap : MonoBehaviour
 
 	static public void ExportThisMap()
     {
+        var tubLevel = Object.FindObjectOfType<TubLevel>();
+        if ( tubLevel == null )
+            throw new System.Exception( "You need a TubLevel component to export a map" );
+
+        if ( tubLevel.Mission == null )
+            throw new System.Exception( "Your TubLevel doesn't have a mission set" );
+
         var scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
 
         var bundles = new List<AssetBundleBuild>();
 
-        var thisBundle = new AssetBundleBuild
+        var sceneBundle = new AssetBundleBuild
         {
-            assetBundleName = $"{scene.name.ToLower()}.map",
+            assetBundleName = $"{tubLevel.Mission.Identifier}.map",
             assetNames = new[] { scene.path }
         };
 
-        bundles.Add( thisBundle );
+        var metaBundle = new AssetBundleBuild
+        {
+            assetBundleName =  $"{tubLevel.Mission.Identifier}.meta",
+            assetNames = new[] { UnityEditor.AssetDatabase.GetAssetPath( tubLevel.Mission ) }
+        };
+
+        bundles.Add( metaBundle );
+        bundles.Add( sceneBundle );
 
         if ( !System.IO.Directory.Exists( "TempBundleBuild" ) )
             System.IO.Directory.CreateDirectory( "TempBundleBuild" );
@@ -30,11 +44,15 @@ public class ExportMap : MonoBehaviour
         if ( !System.IO.Directory.Exists( "ExportedMaps" ) )
             System.IO.Directory.CreateDirectory( "ExportedMaps" );
 
-        if ( System.IO.File.Exists( $"C:\\GitHub\\RoomLevel\\Tub\\Maps\\{thisBundle.assetBundleName}" ) )
-            System.IO.File.Delete( $"C:\\GitHub\\RoomLevel\\Tub\\Maps\\{thisBundle.assetBundleName}" );
+        Copy( $"TempBundleBuild/{sceneBundle.assetBundleName}", $"C:\\GitHub\\RoomLevel\\Tub\\Maps\\{sceneBundle.assetBundleName}" );
+        Copy( $"TempBundleBuild/{metaBundle.assetBundleName}", $"C:\\GitHub\\RoomLevel\\Tub\\Maps\\{metaBundle.assetBundleName}" );
+    }
 
-        System.IO.File.Copy( $"TempBundleBuild/{thisBundle.assetBundleName}", $"C:\\GitHub\\RoomLevel\\Tub\\Maps\\{thisBundle.assetBundleName}" );
+    private static void Copy( string v1, string v2 )
+    {
+        if ( System.IO.File.Exists( v2 ) )
+            System.IO.File.Delete( v2 );
 
-      //  System.IO.Directory.Delete( "TempBundleBuild", true );
+        System.IO.File.Copy( v1, v2 );
     }
 }
