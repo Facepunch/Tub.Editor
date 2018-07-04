@@ -44,8 +44,45 @@ public class ExportMap : MonoBehaviour
         if ( !System.IO.Directory.Exists( "ExportedMaps" ) )
             System.IO.Directory.CreateDirectory( "ExportedMaps" );
 
-        Copy( $"TempBundleBuild/{sceneBundle.assetBundleName}", $"C:\\GitHub\\RoomLevel\\Tub\\Maps\\{sceneBundle.assetBundleName}" );
-        Copy( $"TempBundleBuild/{metaBundle.assetBundleName}", $"C:\\GitHub\\RoomLevel\\Tub\\Maps\\{metaBundle.assetBundleName}" );
+        var metaBundleInfo = new System.IO.FileInfo( $"TempBundleBuild/{metaBundle.assetBundleName}" );
+        var sceneBundleInfo = new System.IO.FileInfo( $"TempBundleBuild/{sceneBundle.assetBundleName}" );
+
+        var missionHeader = new MissionHeader
+        {
+            Version = 1,
+
+            Meta = new MissionHeader.Bundle
+            {
+                Size = metaBundleInfo.Length
+            },
+
+            Scenes = new []
+            {
+                new MissionHeader.Bundle
+                {
+                    Size = sceneBundleInfo.Length
+                }
+            }
+        };
+
+        var json = JsonUtility.ToJson( missionHeader );
+
+        Debug.Log( json );
+
+        var targetName = $"C:\\GitHub\\RoomLevel\\Tub\\Maps\\{tubLevel.Mission.Identifier}.tub";
+
+        if ( System.IO.File.Exists( targetName ) )
+            System.IO.File.Delete( targetName );
+
+        using ( var stream = new System.IO.FileStream( targetName, System.IO.FileMode.OpenOrCreate ) )
+        {
+            using ( var writer = new System.IO.BinaryWriter( stream ) )
+            {
+                writer.Write( json );
+                writer.Write( System.IO.File.ReadAllBytes( $"TempBundleBuild/{metaBundle.assetBundleName}" ) );
+                writer.Write( System.IO.File.ReadAllBytes( $"TempBundleBuild/{sceneBundle.assetBundleName}" ) );
+            }
+        }
     }
 
     private static void Copy( string v1, string v2 )
@@ -54,5 +91,20 @@ public class ExportMap : MonoBehaviour
             System.IO.File.Delete( v2 );
 
         System.IO.File.Copy( v1, v2 );
+    }
+}
+
+[System.Serializable]
+public class MissionHeader
+{
+    public int Version;
+
+    public Bundle Meta;
+    public Bundle[] Scenes;
+
+    [System.Serializable]
+    public class Bundle
+    {
+        public long Size;
     }
 }
