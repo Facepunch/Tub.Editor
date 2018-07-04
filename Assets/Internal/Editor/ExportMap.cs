@@ -39,7 +39,7 @@ public class ExportMap : MonoBehaviour
         if ( !System.IO.Directory.Exists( "TempBundleBuild" ) )
             System.IO.Directory.CreateDirectory( "TempBundleBuild" );
 
-        BuildPipeline.BuildAssetBundles( "TempBundleBuild", bundles.ToArray(), BuildAssetBundleOptions.UncompressedAssetBundle |  BuildAssetBundleOptions.DeterministicAssetBundle | BuildAssetBundleOptions.ForceRebuildAssetBundle | BuildAssetBundleOptions.DisableWriteTypeTree, BuildTarget.StandaloneWindows64 );
+        BuildPipeline.BuildAssetBundles( "TempBundleBuild", bundles.ToArray(), BuildAssetBundleOptions.UncompressedAssetBundle | BuildAssetBundleOptions.ForceRebuildAssetBundle, BuildTarget.StandaloneWindows64 );
 
         if ( !System.IO.Directory.Exists( "ExportedMaps" ) )
             System.IO.Directory.CreateDirectory( "ExportedMaps" );
