@@ -11,16 +11,21 @@ namespace Facepunch
     public sealed class Networker : MonoBehaviour
     {
         public enum ViewSynchronization { Off, ReliableDeltaCompressed, Unreliable, UnreliableOnChange }
+        public enum OwnershipOption { Fixed, Takeover, Request }
 
         public int ownerId;
         public byte group = 0;
         public bool OwnerShipWasTransfered;
         public int prefixBackup = -1;
         public ViewSynchronization synchronization;
+        public OwnershipOption ownershipTransfer = OwnershipOption.Fixed;
         public int viewIdField = 0;
+        public int viewID { get { return viewIdField; } set { viewIdField = value; } }
 
         public bool SyncTransforms = true;
         public bool Frozen = false;
+        public int instantiationId;
+        public List<Component> ObservedComponents;
 
 #if UNITY_EDITOR
         /*

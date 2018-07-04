@@ -222,6 +222,16 @@ Prefab:
       propertyPath: IsEntryPoint
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114693897002776512, guid: 0172e4aba1f1f6346bf332578340d380,
+        type: 2}
+      propertyPath: viewIdField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114693897002776512, guid: 0172e4aba1f1f6346bf332578340d380,
+        type: 2}
+      propertyPath: instantiationId
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0172e4aba1f1f6346bf332578340d380, type: 2}
   m_IsPrefabParent: 0
@@ -1357,9 +1367,12 @@ MonoBehaviour:
   OwnerShipWasTransfered: 0
   prefixBackup: -1
   synchronization: 0
-  viewIdField: 0
+  ownershipTransfer: 0
+  viewIdField: 2
   SyncTransforms: 1
   Frozen: 0
+  instantiationId: 2
+  ObservedComponents: []
 --- !u!4 &2024825941
 Transform:
   m_ObjectHideFlags: 0
