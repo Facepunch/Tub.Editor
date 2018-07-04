@@ -4,6 +4,8 @@
 [Bb]uild/
 [Bb]uilds/
 Assets/AssetStoreTools*
+Assets/ProBuilder Data/
+TempBundleBuild
 
 # Visual Studio cache directory
 .vs/
