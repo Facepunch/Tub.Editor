@@ -258,10 +258,13 @@ MonoBehaviour:
   group: 0
   OwnerShipWasTransfered: 0
   prefixBackup: -1
-  synchronization: 3
+  synchronization: 0
+  ownershipTransfer: 0
   viewIdField: 0
   SyncTransforms: 0
   Frozen: 0
+  instantiationId: 0
+  ObservedComponents: []
 --- !u!114 &114780412245778754
 MonoBehaviour:
   m_ObjectHideFlags: 1

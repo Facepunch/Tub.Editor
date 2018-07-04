@@ -28,17 +28,7 @@ namespace Facepunch
         public List<Component> ObservedComponents;
 
 #if UNITY_EDITOR
-        /*
-        void Reset()
-        {
-            //
-            // Move us to the top
-            //
-            while ( UnityEditorInternal.ComponentUtility.MoveComponentUp( this ) )
-            {
-            }
-        }
-
+           
         public void OnValidate()
         {
             if ( ObservedComponents == null )
@@ -49,7 +39,7 @@ namespace Facepunch
             var observables = GetComponents<IPunObservable>();
             ObservedComponents.Clear();
             ObservedComponents.AddRange( observables.Select( x => x as Component ) );
-             
+
             if ( !SyncTransforms )
             {
                 ObservedComponents.Remove( this );
@@ -90,7 +80,11 @@ namespace Facepunch
                 UnityEditor.EditorUtility.SetDirty( gameObject );
             }
         }
-        */
+            
 #endif
-    }
+        }
+}
+public interface IPunObservable
+{
+
 }

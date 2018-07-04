@@ -1,0 +1,14 @@
+{
+    "name": "Tub.InputOutput.Editor",
+    "references": [
+        "Tub.InputOutput",
+        "Facepunch.Photon",
+        "Facepunch.Unity.Editor"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

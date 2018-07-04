@@ -1,0 +1,11 @@
+{
+    "name": "Tub.InputOutput",
+    "references": [
+        "Facepunch.Photon",
+        "Facepunch.Unity"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}
