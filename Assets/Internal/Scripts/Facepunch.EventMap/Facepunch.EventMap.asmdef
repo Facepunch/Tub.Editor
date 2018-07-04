@@ -1,0 +1,11 @@
+{
+    "name": "Facepunch.EventMap",
+    "references": [
+        "Facepunch.Unity",
+        "Facepunch.System"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

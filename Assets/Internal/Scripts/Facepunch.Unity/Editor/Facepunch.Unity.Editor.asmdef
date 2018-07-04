@@ -1,0 +1,12 @@
+{
+    "name": "Facepunch.Unity.Editor",
+    "references": [
+        "Facepunch.Unity"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}
