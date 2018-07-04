@@ -17,7 +17,7 @@ namespace Facepunch.Editor
 
             if ( lineMat  == null )
             {
-                lineMat = UnityEditor.AssetDatabase.LoadAssetAtPath<Material>( "Assets/Editor/Wireframe.mat" );
+                lineMat = new Material( Shader.Find( "UI/Default" ) );
                 lineMat = GameObject.Instantiate<Material>( lineMat );
             }
 

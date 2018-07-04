@@ -13,6 +13,9 @@ namespace Facepunch.Editor
     {
         public static Vector3 GetObjectCenter( GameObject obj )
         {
+            if ( obj == null )
+                return Vector3.zero;
+
             var rs = obj.GetComponentsInChildren<Renderer>().Where( x => !(x is ParticleSystemRenderer) ).ToArray();
             if ( rs.Length == 0 ) return obj.transform.position;
 
@@ -28,6 +31,9 @@ namespace Facepunch.Editor
 
         public static void DrawArrowedLabel( GameObject from, GameObject to, Color color, string label, float timeOffset )
         {
+            if ( from == null || to == null )
+                return;
+
             var a = Utility.GetObjectCenter( from );
             var b = Utility.GetObjectCenter( to );
             var delta = b - a;
@@ -103,6 +109,9 @@ namespace Facepunch.Editor
 
         public static void DrawEventConnections( GameObject obj, UnityEventBase e, Color color, string label, float timeOffset )
         {
+            if ( obj == null )
+                return;
+
             var center = Utility.GetObjectCenter( obj );
 
             for ( int i = 0; i < e.GetPersistentEventCount(); i++ )
