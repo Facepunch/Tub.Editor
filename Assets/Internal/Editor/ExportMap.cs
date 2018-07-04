@@ -5,10 +5,20 @@ using UnityEditor;
 
 public class ExportMap : MonoBehaviour
 {
+    [MenuItem( "Tub/Export", validate = true )]
+    static public bool ExportThisMapValidate()
+    {
+        var tubLevel = Object.FindObjectOfType<TubLevel>();
+        if ( tubLevel == null ) return false;
+        if ( tubLevel.Mission == null ) return false;
 
-    [MenuItem( "Tub/Export This Map" )]
+        var targetName = EditorPrefs.GetString( $"Save{tubLevel.Mission.Identifier}As" );
+        return !string.IsNullOrEmpty( targetName );
+    }
 
-	static public void ExportThisMap()
+    [MenuItem( "Tub/Export" )]
+
+    static public void ExportThisMap()
     {
         var tubLevel = Object.FindObjectOfType<TubLevel>();
         if ( tubLevel == null )
@@ -16,6 +26,13 @@ public class ExportMap : MonoBehaviour
 
         if ( tubLevel.Mission == null )
             throw new System.Exception( "Your TubLevel doesn't have a mission set" );
+
+        var targetName = EditorPrefs.GetString( $"Save{tubLevel.Mission.Identifier}As" );
+        if ( string.IsNullOrEmpty( targetName  ))
+        {
+            ExportThisMapAs();
+            return;
+        }
 
         var scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
 
@@ -29,7 +46,7 @@ public class ExportMap : MonoBehaviour
 
         var metaBundle = new AssetBundleBuild
         {
-            assetBundleName =  $"{tubLevel.Mission.Identifier}.meta",
+            assetBundleName = $"{tubLevel.Mission.Identifier}.meta",
             assetNames = new[] { UnityEditor.AssetDatabase.GetAssetPath( tubLevel.Mission ) }
         };
 
@@ -56,7 +73,7 @@ public class ExportMap : MonoBehaviour
                 Size = metaBundleInfo.Length
             },
 
-            Scenes = new []
+            Scenes = new[]
             {
                 new MissionHeader.Bundle
                 {
@@ -66,10 +83,6 @@ public class ExportMap : MonoBehaviour
         };
 
         var json = JsonUtility.ToJson( missionHeader );
-
-        Debug.Log( json );
-
-        var targetName = $"C:\\GitHub\\RoomLevel\\Tub\\Maps\\{tubLevel.Mission.Identifier}.tub";
 
         if ( System.IO.File.Exists( targetName ) )
             System.IO.File.Delete( targetName );
@@ -85,12 +98,24 @@ public class ExportMap : MonoBehaviour
         }
     }
 
-    private static void Copy( string v1, string v2 )
-    {
-        if ( System.IO.File.Exists( v2 ) )
-            System.IO.File.Delete( v2 );
+    [MenuItem( "Tub/Export As..." )]
 
-        System.IO.File.Copy( v1, v2 );
+    static public void ExportThisMapAs()
+    {
+        var tubLevel = Object.FindObjectOfType<TubLevel>();
+        if ( tubLevel == null )
+            throw new System.Exception( "You need a TubLevel component to export a map" );
+
+        if ( tubLevel.Mission == null )
+            throw new System.Exception( "Your TubLevel doesn't have a mission set" );
+
+        var target = EditorUtility.SaveFilePanel( "Export Map As..", "", "", "tub" );
+
+        if ( !string.IsNullOrEmpty( target ) )
+        {
+            EditorPrefs.SetString( $"Save{tubLevel.Mission.Identifier}As", target );
+            ExportThisMap();
+        }
     }
 }
 
