@@ -1,0 +1,14 @@
+{
+    "name": "Tub.Player",
+    "references": [
+        "Facepunch.Photon",
+        "Facepunch.Unity",
+        "Facepunch.System",
+        "Facepunch.EventMap",
+        "Tub.Entity"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}

@@ -1,0 +1,13 @@
+{
+    "name": "Tub.Entity",
+    "references": [
+        "Facepunch.Photon",
+        "Facepunch.Unity",
+        "Facepunch.System",
+        "Facepunch.EventMap"
+    ],
+    "optionalUnityReferences": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false
+}
