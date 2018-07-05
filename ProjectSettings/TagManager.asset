@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - start
+  - end
+  - FxTemporaire
+  - fire
+  - Effects
   layers:
   - Default
   - TransparentFX
@@ -13,18 +18,18 @@ TagManager:
   - UI
   - 
   - 
-  - PostProcessing
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Trigger
+  - Carry
+  - Player
+  - UNUSED 1
+  - Breakable
+  - MonsterNonSolid
+  - Ragdoll
+  - Monster
+  - Bullet
+  - PostProcess
+  - Vehicle
+  - Wheel
   - 
   - 
   - 
@@ -40,4 +45,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: New Layer
+    uniqueID: 1908054215
     locked: 0
