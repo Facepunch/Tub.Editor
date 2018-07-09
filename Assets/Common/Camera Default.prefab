@@ -38,8 +38,13 @@ GameObject:
   - component: {fileID: 20952111244885670}
   - component: {fileID: 124486458460713648}
   - component: {fileID: 81972890833524918}
+  - component: {fileID: 114220422772116810}
+  - component: {fileID: 114915222253850642}
   - component: {fileID: 114462328753438018}
   - component: {fileID: 114565707017491272}
+  - component: {fileID: 114980668686047032}
+  - component: {fileID: 114361973430191594}
+  - component: {fileID: 114964776755354504}
   m_Layer: 17
   m_Name: Camera Default
   m_TagString: MainCamera
@@ -183,6 +188,34 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1573337946128236}
   m_Enabled: 1
+--- !u!114 &114220422772116810
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1573337946128236}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c901e648b677e14bb57bbe9e265ead5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shader: {fileID: 4800000, guid: 929a50f02b21eb643bc7740ca88a63d4, type: 3}
+  shaderTag: RenderType
+  texelsPerMeter: 512
+  overlayOpacity: 0.85
+  showHUD: 1
+--- !u!114 &114361973430191594
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1573337946128236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8ec8284cd17963449a1328fdcac9831, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxWidth: 640
 --- !u!114 &114462328753438018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -256,6 +289,100 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
+--- !u!114 &114915222253850642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1573337946128236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a78da3f00f3328541b4526c0b0b5ec5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineThickness: 1
+  lineIntensity: 2
+  fillAmount: 0.01
+  lineColor0: {r: 0.011764706, g: 0.6627451, b: 0.95686275, a: 1}
+  lineColor1: {r: 0.54509807, g: 0.7647059, b: 0.2901961, a: 1}
+  lineColor2: {r: 1, g: 0.75686276, b: 0.02745098, a: 1}
+  additiveRendering: 0
+  backfaceCulling: 1
+  cornerOutlines: 1
+  addLinesBetweenColors: 0
+  scaleWithScreenSize: 1
+  alphaCutoff: 0.5
+  flipY: 0
+  sourceCamera: {fileID: 20952111244885670}
+  outlineCamera: {fileID: 20666482603395916}
+  outlineShaderMaterial: {fileID: 0}
+  renderTexture: {fileID: 0}
+  extraRenderTexture: {fileID: 0}
+--- !u!114 &114964776755354504
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1573337946128236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a764daa5198f2b42a2ae5ed1942414d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114980668686047032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1573337946128236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d29444a3446e8b4fbe2e76a72d7d598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _captureKey: 0
+  _captureOnStart: 0
+  _startPaused: 0
+  _listVideoCodecsOnStart: 0
+  _isRealTime: 1
+  _stopMode: 0
+  _stopFrames: 0
+  _stopSeconds: 0
+  _useMediaFoundationH264: 1
+  _videoCodecPriority:
+  - Lagarith Lossless Codec
+  - x264vfw - H.264/MPEG-4 AVC codec
+  - Xvid MPEG-4 Codec
+  _frameRate: 60
+  _downScale: 100
+  _maxVideoSize: {x: 1, y: 1}
+  _forceVideoCodecIndex: -1
+  _flipVertically: 0
+  _supportAlpha: 0
+  _forceGpuFlush: 0
+  _noAudio: 1
+  _audioCodecPriority: []
+  _forceAudioCodecIndex: -1
+  _forceAudioDeviceIndex: -1
+  _audioCapture: {fileID: 0}
+  _autoGenerateFilename: 1
+  _outputFolderType: 0
+  _outputFolderPath: Screenshots
+  _autoFilenamePrefix: Tub
+  _autoFilenameExtension: mp4
+  _forceFilename: movie.avi
+  _outputType: 0
+  _renderResolution: 18
+  _renderSize: {x: 1, y: 1}
+  _renderAntiAliasing: -1
+  _useMotionBlur: 0
+  _motionBlurSamples: 16
+  _motionBlurCameras: []
+  _allowVSyncDisable: 1
+  _supportTextureRecreate: 0
+  _captureMouseCursor: 0
+  _mouseCursor: {fileID: 0}
+  _minimumDiskSpaceMB: -1
 --- !u!124 &124486458460713648
 Behaviour:
   m_ObjectHideFlags: 1
@@ -274,10 +401,10 @@ ReflectionProbe:
   m_Type: 0
   m_Mode: 1
   m_RefreshMode: 1
-  m_TimeSlicingMode: 2
-  m_Resolution: 256
+  m_TimeSlicingMode: 1
+  m_Resolution: 128
   m_UpdateFrequency: 0
-  m_BoxSize: {x: 50, y: 50, z: 50}
+  m_BoxSize: {x: 5000, y: 5000, z: 5000}
   m_BoxOffset: {x: 0, y: 0, z: 0}
   m_NearClip: 0.05
   m_FarClip: 100

@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Dev Grass
+  m_Name: Dev Wall
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _UVFREE_LOCAL
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -39,7 +39,7 @@ Material:
         m_Scale: {x: 0.5, y: 0.5}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 6c3ba757e36cb2f4fb63d20fef01ee96, type: 3}
         m_Scale: {x: 0.5, y: 0.5}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -57,7 +57,7 @@ Material:
     m_Floats:
     - _BumpScale: 0.2
     - _Cutoff: 0.5
-    - _DetailNormalMapScale: -2.25
+    - _DetailNormalMapScale: 1
     - _DstBlend: 0
     - _EmissionScaleUI: 0
     - _GlossMapScale: 1
@@ -66,17 +66,17 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Parallax: 0.0102
+    - _Parallax: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _TexPower: 10
-    - _TriplanarSpace: 0
+    - _TriplanarSpace: 1
     - _UVSec: 0
     - _UsingMetallicGlossMap: 0
     - _VertexColorStrength: 1
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.32804683, g: 0.46226418, b: 0.17225882, a: 1}
+    - _Color: {r: 0.9137255, g: 0.11764706, b: 0.3882353, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 0}
     - _EmissionColorUI: {r: 1, g: 1, b: 1, a: 1}
