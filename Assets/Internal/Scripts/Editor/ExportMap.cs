@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
+using System.IO;
+using System.Linq;
 
 public class ExportMap : MonoBehaviour
 {
@@ -38,6 +40,13 @@ public class ExportMap : MonoBehaviour
 
         var bundles = new List<AssetBundleBuild>();
 
+        bundles.AddRange( UnityEditor.AssetDatabase.GetAllAssetBundleNames().Select( x => new AssetBundleBuild
+        {
+            assetBundleName = x,
+            assetNames = UnityEditor.AssetDatabase.GetAssetPathsFromAssetBundle( x )
+        } ));
+
+
         var sceneBundle = new AssetBundleBuild
         {
             assetBundleName = $"{tubLevel.Mission.Identifier}.map",
@@ -56,7 +65,7 @@ public class ExportMap : MonoBehaviour
         if ( !System.IO.Directory.Exists( "TempBundleBuild" ) )
             System.IO.Directory.CreateDirectory( "TempBundleBuild" );
 
-        BuildPipeline.BuildAssetBundles( "TempBundleBuild", bundles.ToArray(), BuildAssetBundleOptions.UncompressedAssetBundle | BuildAssetBundleOptions.ForceRebuildAssetBundle, BuildTarget.StandaloneWindows64 );
+        BuildPipeline.BuildAssetBundles( "TempBundleBuild", bundles.ToArray(), BuildAssetBundleOptions.UncompressedAssetBundle | BuildAssetBundleOptions.ForceRebuildAssetBundle | BuildAssetBundleOptions.DeterministicAssetBundle, BuildTarget.StandaloneWindows64 );
 
         if ( !System.IO.Directory.Exists( "ExportedMaps" ) )
             System.IO.Directory.CreateDirectory( "ExportedMaps" );
