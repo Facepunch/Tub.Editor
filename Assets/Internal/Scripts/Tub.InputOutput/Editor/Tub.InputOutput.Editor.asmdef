@@ -3,7 +3,8 @@
     "references": [
         "Tub.InputOutput",
         "Facepunch.Photon",
-        "Facepunch.Unity.Editor"
+        "Facepunch.Unity.Editor",
+        "Facepunch.Photon.Tools"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [

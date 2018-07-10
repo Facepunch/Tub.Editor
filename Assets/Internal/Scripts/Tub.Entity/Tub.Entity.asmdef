@@ -4,7 +4,8 @@
         "Facepunch.Photon",
         "Facepunch.Unity",
         "Facepunch.System",
-        "Facepunch.EventMap"
+        "Facepunch.EventMap",
+        "Facepunch.Photon.Tools"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

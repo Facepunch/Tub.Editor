@@ -1,0 +1,4 @@
+{
+    "name": "Tub.Player",
+    "references": ["Facepunch.Photon", "Facepunch.System", "Facepunch.Unity"]
+}

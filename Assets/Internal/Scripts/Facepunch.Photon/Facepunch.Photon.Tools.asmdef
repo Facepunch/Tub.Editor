@@ -1,6 +1,8 @@
 {
-    "name": "Facepunch.Photon",
-    "references": [],
+    "name": "Facepunch.Photon.Tools",
+    "references": [
+        "Facepunch.Photon"
+    ],
     "optionalUnityReferences": [],
     "includePlatforms": [],
     "excludePlatforms": [],
