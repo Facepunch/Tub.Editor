@@ -1,7 +1,8 @@
 {
     "name": "Facepunch.Photon.Tools",
     "references": [
-        "Facepunch.Photon"
+        "Facepunch.Photon",
+        "Tub.Editor"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

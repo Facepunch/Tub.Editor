@@ -19,8 +19,8 @@ namespace Facepunch
 
             if ( Application.isPlaying )
             {
-                EditorGUILayout.LabelField( $"View ID: {t.viewID}", EditorStyles.whiteMiniLabel );
-                EditorGUILayout.LabelField( $"This Owner ID: {t.ownerId}", EditorStyles.whiteMiniLabel );
+                EditorGUILayout.LabelField( $"View ID: {t.viewIdField}", EditorStyles.whiteMiniLabel );
+                EditorGUILayout.LabelField( $"This Owner ID: {t.viewIdField}", EditorStyles.whiteMiniLabel );
                 return;
             }
 
@@ -42,7 +42,7 @@ namespace Facepunch
 
                 EditorGUILayout.BeginVertical( GUI.skin.box, GUILayout.ExpandHeight( true ) );
                 EditorGUILayout.LabelField( "Info", EditorStyles.whiteMiniLabel );
-                EditorGUILayout.LabelField( $"ViewId", $"{t.viewID}" );
+                EditorGUILayout.LabelField( $"ViewId", $"{t.viewIdField}" );
                 EditorGUILayout.LabelField( $"Ownership", $"{t.ownershipTransfer}" );
                 EditorGUILayout.EndVertical();
 

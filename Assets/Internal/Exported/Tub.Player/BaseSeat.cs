@@ -1,9 +1,10 @@
 using UnityEngine;
 using Facepunch;
+using System.Collections.Generic;
 
 
-public partial class BaseSeat : Networked
+public class BaseSeat : Networked
 {
-   UnityEngine.Transform SeatPoint;
-   BaseControllable Controllable;
+   public Transform SeatPoint;
+   public BaseControllable Controllable;
 }

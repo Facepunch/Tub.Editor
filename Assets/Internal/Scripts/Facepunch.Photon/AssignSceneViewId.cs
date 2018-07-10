@@ -28,12 +28,12 @@ public class AssignSceneViewId : EditorWindow
 
         foreach ( Facepunch.Networker view in views )
         {
-            if ( view.viewID <= 0 || views.Count( x => x.viewID == view.viewID ) > 1 )
+            if ( view.viewIdField <= 0 || views.Count( x => x.viewIdField == view.viewIdField ) > 1 )
             {
                 view.ownerId = 0;
-                view.viewID = UnusedViewId( views );
+                view.viewIdField = UnusedViewId( views );
                 view.prefixBackup = -1;
-                view.instantiationId = view.viewID;
+                view.instantiationId = view.viewIdField;
 
                 EditorUtility.SetDirty( view );
             }
@@ -46,9 +46,9 @@ public class AssignSceneViewId : EditorWindow
                                                         .Cast<Facepunch.Networker>()
                                                         .Where( x => EditorUtility.IsPersistent( x.gameObject ) ) )
         {
-            if ( view.viewID == 0 ) continue;
+            if ( view.viewIdField == 0 ) continue;
 
-            view.viewID = 0;
+            view.viewIdField = 0;
             view.prefixBackup = -1;
             view.instantiationId = -1;
             EditorUtility.SetDirty( view );
@@ -77,7 +77,7 @@ public class AssignSceneViewId : EditorWindow
     {
         for( int i=1; i < 5000; i++ )
         {
-            if ( views.Any( x => x.viewID == i ) )
+            if ( views.Any( x => x.viewIdField == i ) )
                 continue;
 
             return i;

@@ -6,7 +6,7 @@ using Facepunch;
 namespace Tub.InputOutput
 {
     [RequireComponent( typeof( Networker ) )]
-    public class NetworkedState : OutputTarget, IPunObservable
+    public class NetworkedState : OutputTarget, INetworkObserved
     {
         public bool State;
 

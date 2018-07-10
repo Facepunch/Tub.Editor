@@ -1,11 +1,8 @@
 {
-    "name": "Tub.Entity",
+    "name": "Tub.Editor",
     "references": [
-        "Facepunch.Photon",
         "Facepunch.Unity",
-        "Facepunch.System",
-        "Facepunch.EventMap",
-        "Facepunch.Photon.Tools"
+        "Facepunch.System"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [],

@@ -1,7 +1,11 @@
 using UnityEngine;
 using Facepunch;
+using System.Collections.Generic;
 
 
-public partial class Networked : MonoBehaviour
+namespace Facepunch
 {
+	public class Networked : MonoBehaviour
+	{
+	}
 }

@@ -3,6 +3,10 @@ using Facepunch;
 using System.Collections.Generic;
 
 
-public class VehicleSeat : BaseSeat
+namespace Tub
 {
+	public struct DeathType
+	{
+	   public int value__;
+	}
 }

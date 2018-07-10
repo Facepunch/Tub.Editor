@@ -1,7 +1,8 @@
 using UnityEngine;
 using Facepunch;
+using System.Collections.Generic;
 
 
-public partial class BaseControllable : Networked
+public class BaseControllable : Networked
 {
 }
