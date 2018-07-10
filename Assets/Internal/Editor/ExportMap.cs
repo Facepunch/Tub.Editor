@@ -29,15 +29,33 @@ namespace Tub
             if ( tubLevel == null )
                 throw new System.Exception( "You need a TubLevel component to export a map" );
 
-            if ( tubLevel.Mission == null )
-                throw new System.Exception( "Your TubLevel doesn't have a mission set" );
-
             var targetName = EditorPrefs.GetString( $"Save{tubLevel.Mission.Identifier}As" );
             if ( string.IsNullOrEmpty( targetName ) )
             {
                 ExportThisMapAs();
                 return;
             }
+
+            ExportMapAs( targetName );
+        }
+
+
+        static public void ExportMapAs( string targetName, bool randomiseNames = false )
+        { 
+            var tubLevel = Object.FindObjectOfType<TubLevel>();
+            if ( tubLevel == null )
+                throw new System.Exception( "You need a TubLevel component to export a map" );
+
+            if ( tubLevel.Mission == null )
+                throw new System.Exception( "Your TubLevel doesn't have a mission set" );
+
+            EditorUtility.DisplayProgressBar( "Exporting Map", "...", 0.0f );
+
+            var nameExtra = "";
+
+            if ( randomiseNames )
+                nameExtra = Random.Range( 1, 99999 ).ToString();
+
 
             var scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
 
@@ -52,13 +70,13 @@ namespace Tub
 
             var sceneBundle = new AssetBundleBuild
             {
-                assetBundleName = $"{tubLevel.Mission.Identifier}.map",
+                assetBundleName = $"{tubLevel.Mission.Identifier}{nameExtra}.map",
                 assetNames = new[] { scene.path }
             };
 
             var metaBundle = new AssetBundleBuild
             {
-                assetBundleName = $"{tubLevel.Mission.Identifier}.meta",
+                assetBundleName = $"{tubLevel.Mission.Identifier}{nameExtra}.meta",
                 assetNames = new[] { UnityEditor.AssetDatabase.GetAssetPath( tubLevel.Mission ) }
             };
 
@@ -68,10 +86,10 @@ namespace Tub
             if ( !System.IO.Directory.Exists( "TempBundleBuild" ) )
                 System.IO.Directory.CreateDirectory( "TempBundleBuild" );
 
+            EditorUtility.DisplayProgressBar( "Exporting Map", "Bundling..", 5.0f );
+
             BuildPipeline.BuildAssetBundles( "TempBundleBuild", bundles.ToArray(), BuildAssetBundleOptions.UncompressedAssetBundle | BuildAssetBundleOptions.ForceRebuildAssetBundle | BuildAssetBundleOptions.DeterministicAssetBundle, BuildTarget.StandaloneWindows64 );
 
-            if ( !System.IO.Directory.Exists( "ExportedMaps" ) )
-                System.IO.Directory.CreateDirectory( "ExportedMaps" );
 
             var metaBundleInfo = new System.IO.FileInfo( $"TempBundleBuild/{metaBundle.assetBundleName}" );
             var sceneBundleInfo = new System.IO.FileInfo( $"TempBundleBuild/{sceneBundle.assetBundleName}" );
@@ -96,8 +114,12 @@ namespace Tub
 
             var json = JsonUtility.ToJson( missionHeader );
 
+            EditorUtility.DisplayProgressBar( "Exporting Map", "Deleting Old File..", 9.5f );
+
             if ( System.IO.File.Exists( targetName ) )
                 System.IO.File.Delete( targetName );
+
+            EditorUtility.DisplayProgressBar( "Exporting Map", "Writing..", 9.9f );
 
             using ( var stream = new System.IO.FileStream( targetName, System.IO.FileMode.OpenOrCreate ) )
             {
@@ -108,10 +130,12 @@ namespace Tub
                     writer.Write( System.IO.File.ReadAllBytes( $"TempBundleBuild/{sceneBundle.assetBundleName}" ) );
                 }
             }
+
+
+            EditorUtility.ClearProgressBar();
         }
 
         [MenuItem( "Tub/Export As..." )]
-
         static public void ExportThisMapAs()
         {
             var tubLevel = Object.FindObjectOfType<TubLevel>();
@@ -128,6 +152,21 @@ namespace Tub
                 EditorPrefs.SetString( $"Save{tubLevel.Mission.Identifier}As", target );
                 ExportThisMap();
             }
+        }
+
+
+        [MenuItem( "Tub/Open In Game.." )]
+
+        static public void ExportThisMapAndRun()
+        {
+            // The game must be running already !
+
+            var fileName = System.IO.Path.GetTempFileName();
+            ExportMapAs( fileName, true );
+
+            EditorUtility.DisplayProgressBar( "Communicate", "Opening Game..", 0.5f );
+            ClientMessage.Send( $"run;{fileName}" );
+            EditorUtility.ClearProgressBar();
         }
     }
 
