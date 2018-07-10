@@ -3,6 +3,9 @@ using Facepunch;
 using System.Collections.Generic;
 
 
-public class VehicleSeat : BaseSeat, INetworkObserved, INetworkTakeover
+namespace Tub
 {
+	public class VehicleSeat : BaseSeat, INetworkObserved, INetworkTakeover
+	{
+	}
 }

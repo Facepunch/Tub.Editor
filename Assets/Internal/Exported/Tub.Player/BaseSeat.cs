@@ -3,8 +3,11 @@ using Facepunch;
 using System.Collections.Generic;
 
 
-public class BaseSeat : Networked, INetworkObserved, INetworkTakeover
+namespace Tub
 {
-   public Transform SeatPoint;
-   public BaseControllable Controllable;
+	public class BaseSeat : Networked, INetworkObserved, INetworkTakeover
+	{
+	   public Transform SeatPoint;
+	   public Tub.BaseControllable Controllable;
+	}
 }
