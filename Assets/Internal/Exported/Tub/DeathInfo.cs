@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 namespace Tub
 {
+	[System.Serializable]
 	public struct DeathInfo
 	{
 	   public Tub.DeathType DeathType;
