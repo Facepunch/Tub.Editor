@@ -3,6 +3,6 @@ using Facepunch;
 using System.Collections.Generic;
 
 
-public class BaseControllable : Networked
+public class BaseControllable : Networked, INetworkObserved, INetworkTakeover
 {
 }

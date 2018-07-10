@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Tub
 {
-	public class BaseEntity : Networked
+	public class BaseEntity : Networked, INetworkObserved
 	{
 	   public EntityClass Classification;
 	   public bool CanTakeDamage;

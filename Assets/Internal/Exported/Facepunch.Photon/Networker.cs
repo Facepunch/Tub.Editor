@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Facepunch
 {
-	public class Networker : MonoBehaviour
+	public class Networker : MonoBehaviour, INetworkObserved
 	{
 	   public bool SyncTransforms;
 	   public bool Frozen;

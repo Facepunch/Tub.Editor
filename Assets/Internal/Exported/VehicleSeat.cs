@@ -3,6 +3,6 @@ using Facepunch;
 using System.Collections.Generic;
 
 
-public class VehicleSeat : BaseSeat
+public class VehicleSeat : BaseSeat, INetworkObserved, INetworkTakeover
 {
 }
