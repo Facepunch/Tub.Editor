@@ -11,6 +11,12 @@ namespace Tub
 
     public class ExportMap : MonoBehaviour
     {
+        public static string TubExe
+        {
+            get { return EditorPrefs.GetString( "tubexe", "" ); }
+            set { EditorPrefs.SetString( "tubexe", value ); }
+        }
+
         [MenuItem( "Tub/Export", validate = true )]
         static public bool ExportThisMapValidate()
         {
@@ -161,6 +167,17 @@ namespace Tub
             var fileName = System.IO.Path.GetTempFileName();
             ExportMapAs( fileName );
 
+            if ( string.IsNullOrEmpty( TubExe ) || !System.IO.File.Exists( TubExe ) )
+            {
+                FindTubExe();
+            }
+
+            if ( string.IsNullOrEmpty( TubExe ) )
+            {
+                UnityEngine.Debug.LogError( "Tub.exe not found" );
+                return;
+            }
+
             var command = $"run;{fileName}";
 
             //
@@ -168,8 +185,29 @@ namespace Tub
             //
             if ( !ClientMessage.Send( $"run;{fileName}" ) )
             {
-                Process.Start( $"steam://run/790910//-cmd \"{command}\"" );
+                Process.Start( $"{TubExe}", $"-cmd \"{command}\"" );
             }
+        }
+
+        [MenuItem( "Tub/Settings/Find Tub.exe" )]
+        static public void FindTubExe()
+        {
+            TubExe = "";
+
+            var searchLocations = new[]
+            {
+                @"C:\Steam\steamapps\common\Tub\",
+                @"C:\Program Files\Steam\SteamApps\Common",
+                @"D:\Program Files\Steam\SteamApps\Common",
+                @"C:\Program Files\Steam (x86)\SteamApps\Common",
+                @"D:\Program Files\Steam (x86)\SteamApps\Common",
+            };
+
+            var startDirectory = searchLocations.FirstOrDefault( x => System.IO.Directory.Exists( x ) );
+
+            var exe = EditorUtility.OpenFilePanel( "Find tub.exe", startDirectory, "exe");
+
+            TubExe = exe;
         }
     }
 
