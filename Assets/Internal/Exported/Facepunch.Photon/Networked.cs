@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 namespace Facepunch
 {
+	[RequireComponent( typeof(Networker) )]
 	public class Networked : MonoBehaviour
 	{
 	}

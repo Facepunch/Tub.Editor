@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 namespace Tub
 {
+	[RequireComponent( typeof(Networker) )]
 	public class TubLevel : Networked, INetworkObserved
 	{
 	   public MissionDef Mission;
