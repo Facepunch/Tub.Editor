@@ -87,7 +87,7 @@ namespace Facepunch
 
             var hash = NetworkertHash( networker );
 
-            var observables = networker.GetComponents<INetworkObservable>();
+            var observables = networker.GetComponents<INetworkObserved>();
 
             networker.ObservedComponents.Clear();
             networker.ObservedComponents.AddRange( observables.Select( x => x as Component ) );
