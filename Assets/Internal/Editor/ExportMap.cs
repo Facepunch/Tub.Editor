@@ -168,7 +168,7 @@ namespace Tub
             //
             if ( !ClientMessage.Send( $"run;{fileName}" ) )
             {
-                Process.Start( $"steam://run/790910//-cmd='{command}'" );
+                Process.Start( $"steam://run/790910//-cmd \"{command}\"" );
             }
         }
     }
