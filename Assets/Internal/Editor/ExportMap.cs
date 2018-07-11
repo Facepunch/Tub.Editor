@@ -41,7 +41,7 @@ namespace Tub
         }
 
 
-        static public void ExportMapAs( string targetName, string nameAppend  = "" )
+        static public void ExportMapAs( string targetName )
         { 
             var tubLevel = Object.FindObjectOfType<TubLevel>();
             if ( tubLevel == null )
@@ -68,13 +68,13 @@ namespace Tub
 
             var sceneBundle = new AssetBundleBuild
             {
-                assetBundleName = $"{tubLevel.Mission.Identifier}{nameAppend}.map",
+                assetBundleName = $"{tubLevel.Mission.Identifier}.map",
                 assetNames = new[] { scene.path }
             };
 
             var metaBundle = new AssetBundleBuild
             {
-                assetBundleName = $"{tubLevel.Mission.Identifier}{nameAppend}.meta",
+                assetBundleName = $"{tubLevel.Mission.Identifier}.meta",
                 assetNames = new[] { UnityEditor.AssetDatabase.GetAssetPath( tubLevel.Mission ) }
             };
 
@@ -158,14 +158,18 @@ namespace Tub
         [MenuItem( "Tub/Open In Game.." )]
         static public void ExportThisMapAndRun()
         {
-            // The game must be running already !
-
             var fileName = System.IO.Path.GetTempFileName();
-            ExportMapAs( fileName, ".andrun" );
+            ExportMapAs( fileName );
 
-            EditorUtility.DisplayProgressBar( "Communicate", "Opening Game..", 0.5f );
-            ClientMessage.Send( $"run;{fileName}" );
-            EditorUtility.ClearProgressBar();
+            var command = $"run;{fileName}";
+
+            //
+            // Is the game running?
+            //
+            if ( !ClientMessage.Send( $"run;{fileName}" ) )
+            {
+                Process.Start( $"steam://run/790910//-cmd='{command}'" );
+            }
         }
     }
 

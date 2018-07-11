@@ -14,25 +14,24 @@ namespace Tub
         /// <summary>
         /// Send a message to the game from the editor
         /// </summary>
-        public static void Send( string clientMessage )
+        public static bool Send( string clientMessage )
         {
-            try
-            {
-                var sock = new TcpClient( "localhost", 8052 );
+            var sock = new TcpClient();
 
-                using ( var stream = sock.GetStream() )
+            if ( !sock.ConnectAsync( "127.0.0.1", 8052 ).Wait( 50 ) )
+                return false;
+
+            using ( var stream = sock.GetStream() )
+            {
+                if ( stream.CanWrite )
                 {
-                    if ( stream.CanWrite )
-                    {
-                        byte[] clientMessageAsByteArray = Encoding.ASCII.GetBytes( clientMessage );
-                        stream.Write( clientMessageAsByteArray, 0, clientMessageAsByteArray.Length );
-                    }
+                    byte[] clientMessageAsByteArray = Encoding.ASCII.GetBytes( clientMessage );
+                    stream.Write( clientMessageAsByteArray, 0, clientMessageAsByteArray.Length );
                 }
             }
-            catch ( System.Exception e )
-            {
-                Debug.LogError( $"Error talking to game: {e.Message}" );
-            }
+
+            sock.Close();
+            return true;
         }
     }
 
