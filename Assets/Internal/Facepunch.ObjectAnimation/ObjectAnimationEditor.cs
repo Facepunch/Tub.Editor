@@ -112,7 +112,7 @@ namespace Facepunch
             if ( !justCreated )
             {
                 // Are we a prefab?
-                var prefab = PrefabUtility.GetPrefabParent( t.gameObject );
+                var prefab = PrefabUtility.GetCorrespondingObjectFromSource( t.gameObject );
                 if ( prefab != null )
                 {
                     var path = AssetDatabase.GetAssetPath( t.AnimationClip );

@@ -156,7 +156,6 @@ namespace Tub
 
 
         [MenuItem( "Tub/Open In Game.." )]
-
         static public void ExportThisMapAndRun()
         {
             // The game must be running already !
