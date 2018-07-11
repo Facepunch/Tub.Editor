@@ -185,7 +185,14 @@ namespace Tub
             //
             if ( !ClientMessage.Send( $"run;{fileName}" ) )
             {
-                Process.Start( $"{TubExe}", $"-cmd \"{command}\"" );
+                var startInfo = new ProcessStartInfo
+                {
+                    WorkingDirectory = System.IO.Path.GetDirectoryName( TubExe ),
+                    Arguments = $"-cmd \"{command}\"",
+                    FileName = TubExe
+                };
+
+                Process.Start( startInfo );
             }
         }
 
