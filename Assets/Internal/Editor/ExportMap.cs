@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEditor;
 using System.IO;
 using System.Linq;
+using System.Diagnostics;
 
 namespace Tub
 {
@@ -40,7 +41,7 @@ namespace Tub
         }
 
 
-        static public void ExportMapAs( string targetName, bool randomiseNames = false )
+        static public void ExportMapAs( string targetName, string nameAppend  = "" )
         { 
             var tubLevel = Object.FindObjectOfType<TubLevel>();
             if ( tubLevel == null )
@@ -51,15 +52,12 @@ namespace Tub
 
             EditorUtility.DisplayProgressBar( "Exporting Map", "...", 0.0f );
 
-            var nameExtra = "";
-
-            if ( randomiseNames )
-                nameExtra = Random.Range( 1, 99999 ).ToString();
-
 
             var scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
 
             var bundles = new List<AssetBundleBuild>();
+
+            var timer = Stopwatch.StartNew();
 
             bundles.AddRange( UnityEditor.AssetDatabase.GetAllAssetBundleNames().Select( x => new AssetBundleBuild
             {
@@ -70,13 +68,13 @@ namespace Tub
 
             var sceneBundle = new AssetBundleBuild
             {
-                assetBundleName = $"{tubLevel.Mission.Identifier}{nameExtra}.map",
+                assetBundleName = $"{tubLevel.Mission.Identifier}{nameAppend}.map",
                 assetNames = new[] { scene.path }
             };
 
             var metaBundle = new AssetBundleBuild
             {
-                assetBundleName = $"{tubLevel.Mission.Identifier}{nameExtra}.meta",
+                assetBundleName = $"{tubLevel.Mission.Identifier}{nameAppend}.meta",
                 assetNames = new[] { UnityEditor.AssetDatabase.GetAssetPath( tubLevel.Mission ) }
             };
 
@@ -88,7 +86,9 @@ namespace Tub
 
             EditorUtility.DisplayProgressBar( "Exporting Map", "Bundling..", 5.0f );
 
-            BuildPipeline.BuildAssetBundles( "TempBundleBuild", bundles.ToArray(), BuildAssetBundleOptions.UncompressedAssetBundle | BuildAssetBundleOptions.ForceRebuildAssetBundle | BuildAssetBundleOptions.DeterministicAssetBundle, BuildTarget.StandaloneWindows64 );
+            BuildPipeline.BuildAssetBundles( "TempBundleBuild", bundles.ToArray(), BuildAssetBundleOptions.UncompressedAssetBundle | BuildAssetBundleOptions.DeterministicAssetBundle, BuildTarget.StandaloneWindows64 );
+
+            UnityEngine.Debug.Log( $"Created bundles in {timer.Elapsed.TotalSeconds:0.00} seconds" );
 
 
             var metaBundleInfo = new System.IO.FileInfo( $"TempBundleBuild/{metaBundle.assetBundleName}" );
@@ -161,7 +161,7 @@ namespace Tub
             // The game must be running already !
 
             var fileName = System.IO.Path.GetTempFileName();
-            ExportMapAs( fileName, true );
+            ExportMapAs( fileName, ".andrun" );
 
             EditorUtility.DisplayProgressBar( "Communicate", "Opening Game..", 0.5f );
             ClientMessage.Send( $"run;{fileName}" );
