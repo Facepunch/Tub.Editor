@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Identifier: samplemission
   Name: Sample Mission
-  Description: Hello this is my sample mission, how are you
-  Help: This is soem help that will show to help you do the sample mission.
+  Description: Hello this is my sample mission, how are you?
+  Help: This is some help that will show to help you do the sample mission.
   TileImage: {fileID: 21300000, guid: f917599d65fa6c145b0d58c47b3294d2, type: 3}
   HeadlineImage: {fileID: 21300000, guid: 2ff5a39db4afaea4c99e1c62ce69b840, type: 3}
   HeadlineVideo: {fileID: 0}
