@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Tub
 {
-	public class Checkpoint : BaseCheckpoint, INetworkObserved
+	public class CheckPoint : BaseCheckPoint, INetworkObserved
 	{
 	}
 }

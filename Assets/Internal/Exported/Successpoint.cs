@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Tub
 {
-	public class Successpoint : MonoBehaviour
+	public class SuccessPoint : MonoBehaviour
 	{
 	}
 }
