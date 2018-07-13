@@ -1,0 +1,4 @@
+{
+    "name": "Facepunch.Photon",
+    "references": ["Facepunch.System", "Facepunch.Unity", "Facepunch.EventMap", "Tub.Editor"]
+}
