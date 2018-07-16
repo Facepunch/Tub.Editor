@@ -320,6 +320,7 @@ MonoBehaviour:
   DamageType: 0
   DamageAmount: 1000
   DeathInfo:
+    DeathType: 0
     ReasonOthers: drowned
     ReasonSelf: You drowned
     Gib: 0
