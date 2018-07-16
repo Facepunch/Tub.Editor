@@ -3,33 +3,36 @@ using Facepunch;
 using System.Collections.Generic;
 
 
-public class NetAnimationControlled : NetAnimation, INetworkObserved, INetworkStatic
+namespace Tub
 {
-   public float Target;
-   public float Current;
+	public class NetAnimationControlled : NetAnimation, INetworkObserved, INetworkStatic
+	{
+	   public float Target;
+	   public float Current;
 
-   //
-   // Methods here stubbed so you can hook them up with the Unity event stuff
-   //
+	   //
+	   // Methods here stubbed so you can hook them up with the Unity event stuff
+	   //
 
-   public void SetValue( float delta )
-   {
-   }
+	   public void SetValue( float delta )
+	   {
+	   }
 
-   public void Toggle()
-   {
-   }
+	   public void Toggle()
+	   {
+	   }
 
-   public void SetOn()
-   {
-   }
+	   public void SetOn()
+	   {
+	   }
 
-   public void SetOff()
-   {
-   }
+	   public void SetOff()
+	   {
+	   }
 
-   public override void SetClip( string name )
-   {
-   }
+	   public override void SetClip( string name )
+	   {
+	   }
 
+	}
 }
