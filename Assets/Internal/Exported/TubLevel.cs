@@ -14,5 +14,8 @@ namespace Tub
 	   public int MinimapSize;
 	   public Texture MinimapTexture;
 	   public bool CollectAllCollectables;
+	   public bool EndGameIfNoOneAlive;
+	   public bool SuccessIfAnyoneFinished;
+	   public bool SuccessIfEveryoneFinished;
 	}
 }

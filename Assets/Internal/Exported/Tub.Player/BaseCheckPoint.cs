@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Tub
 {
-	public class BaseCheckPoint : Networked
+	public class BaseCheckPoint : Networked, INetworkStatic
 	{
 	   public bool Unlocked;
 	   public bool IsEntryPoint;
