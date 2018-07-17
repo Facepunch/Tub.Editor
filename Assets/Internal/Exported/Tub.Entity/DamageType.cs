@@ -5,13 +5,11 @@ using System.Collections.Generic;
 
 namespace Tub
 {
-	public enum DeathType
+	public enum DamageType
 	{
 	   Generic = 0,
-	   Crushed = 1,
-	   Exploded = 2,
-	   Burnt = 3,
-	   Drowned = 4,
-	   Suicide = 5,
+	   Explosion = 1,
+	   Burn = 2,
+	   Melee = 3,
 	}
 }

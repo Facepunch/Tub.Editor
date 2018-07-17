@@ -10,7 +10,7 @@ namespace Tub
 	public class BaseEntity : Networked, INetworkObserved
 	{
 	   [InspectorFlags]
-	   public EntityClass Classification;
+	   public Tub.EntityClass Classification;
 	   public bool CanTakeDamage;
 	   public float Health;
 	}
