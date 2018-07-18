@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Tub
 {
-	public class BaseControllable : Networked, INetworkObserved, INetworkTakeover
+	public class BaseControllable : Facepunch.Networked, INetworkObserved, INetworkTakeover
 	{
 	}
 }

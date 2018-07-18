@@ -15,6 +15,8 @@ namespace Tub.InputOutput
 
         private ReorderableList ActiveOnTrue;
         private ReorderableList ActiveOnFalse;
+        private ReorderableList EnableOnTrue;
+        private ReorderableList EnableOnFalse;
 
         protected int CurrentTab;
 
@@ -22,6 +24,8 @@ namespace Tub.InputOutput
         {
             ActiveOnTrue = new ReorderableList( "Activate Objects When True", serializedObject, serializedObject.FindProperty( "ActiveOnTrue" ) );
             ActiveOnFalse = new ReorderableList( "Activate Objects When False", serializedObject, serializedObject.FindProperty( "ActiveOnFalse" ) );
+            EnableOnTrue = new ReorderableList( "Activate Component When True", serializedObject, serializedObject.FindProperty( "EnableOnTrue" ) );
+            EnableOnFalse = new ReorderableList( "Activate Component When False", serializedObject, serializedObject.FindProperty( "EnableOnFalse" ) );
         }
 
         public override void OnInspectorGUI()
@@ -48,6 +52,8 @@ namespace Tub.InputOutput
             {
                 ActiveOnTrue.DoLayoutList();
                 ActiveOnFalse.DoLayoutList();
+                EnableOnTrue.DoLayoutList();
+                EnableOnFalse.DoLayoutList();
             }
         }
 

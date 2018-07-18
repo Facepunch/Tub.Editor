@@ -54,7 +54,7 @@ namespace Tub.InputOutput
 
             foreach ( var o in obj.Targets )
             {
-                Utility.DrawArrowedLabel( o.gameObject, obj.gameObject, Color.cyan, $"BooleanTest\n({obj.BooleanValue})", (o.GetInstanceID() % 1000) / 1000.0f );
+                Utility.DrawArrowedLabel( o.gameObject, obj.gameObject, Color.cyan, $"BooleanTest", (o.GetInstanceID() % 1000) / 1000.0f );
             }
         }
     }

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Tub
 {
-	public class TriggerSuccess : LocalPlayerTrigger
+	public class TriggerSuccess : Tub.LocalPlayerTrigger
 	{
 	}
 }

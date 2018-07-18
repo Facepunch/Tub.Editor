@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Tub
 {
-	public class GroundPlatform : Networked
+	public class GroundPlatform : Facepunch.Networked
 	{
 	   public Transform Root;
 	}

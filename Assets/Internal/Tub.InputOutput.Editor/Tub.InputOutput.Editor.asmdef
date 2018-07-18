@@ -2,9 +2,9 @@
     "name": "Tub.InputOutput.Editor",
     "references": [
         "Tub.InputOutput",
+        "Tub.Player",
         "Facepunch.Photon",
-        "Facepunch.Unity.Editor",
-        "Facepunch.Photon.Tools"
+        "Facepunch.Unity.Editor"
     ],
     "optionalUnityReferences": [],
     "includePlatforms": [

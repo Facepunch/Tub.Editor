@@ -1,0 +1,4 @@
+{
+    "name": "Tub.InputOutput",
+    "references": ["Tub.Player", "Tub.Entity", "Facepunch.Photon", "Facepunch.System", "Facepunch.Unity", "Facepunch.EventMap", "Tub.Editor"]
+}

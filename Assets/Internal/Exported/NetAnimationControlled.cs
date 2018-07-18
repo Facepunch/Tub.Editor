@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Tub
 {
-	public class NetAnimationControlled : NetAnimation, INetworkObserved, INetworkStatic
+	public class NetAnimationControlled : Tub.NetAnimation, INetworkObserved, INetworkStatic
 	{
 	   public float Target;
 	   public float Current;
@@ -13,10 +13,6 @@ namespace Tub
 	   //
 	   // Methods here stubbed so you can hook them up with the Unity event stuff
 	   //
-
-	   public void SetValue( float delta )
-	   {
-	   }
 
 	   public void Toggle()
 	   {

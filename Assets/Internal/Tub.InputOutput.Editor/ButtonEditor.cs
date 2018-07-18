@@ -33,10 +33,13 @@ namespace Tub.InputOutput
             EditorGUILayout.PropertyField( serializedObject.FindProperty( "Type" ), new GUIContent( "Button press style" ) );
             EditorGUILayout.PropertyField( serializedObject.FindProperty( "RepeatTime" ), new GUIContent( "Seconds before can press again" ) );
 
-            if ( Button.Type == Button.PressType.OnWithTimedReset )
+            if ( Button.Type == ButtonPressMode.OnWithTimedReset )
             {
                 EditorGUILayout.PropertyField( serializedObject.FindProperty( "DelayBeforeReset" ), new GUIContent( "Reset to off after seconds" ) );
             }
+
+            EditorGUILayout.PropertyField( serializedObject.FindProperty( "EnabledIf" ), new GUIContent( "Enabled If True" ) );
         }
     }
+
 }

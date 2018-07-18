@@ -3,10 +3,10 @@ using Facepunch;
 using System.Collections.Generic;
 
 
-namespace Tub
+namespace Tub.InputOutput
 {
 	[RequireComponent( typeof(Networker) )]
-	public class VehicleSeat : Tub.BaseSeat, INetworkObserved, INetworkTakeover
+	public class InputBase : Facepunch.Networked, INetworkObserved
 	{
 	}
 }
