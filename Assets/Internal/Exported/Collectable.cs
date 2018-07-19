@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Tub
 {
-	public class Collectible : Facepunch.Networked
+	public class Collectable : Facepunch.Networked
 	{
 	   public GameObject PickupEffect;
 	   public Sprite HudIcon;

@@ -9,10 +9,8 @@ namespace Tub
 	public class TubLevel : Facepunch.Networked, INetworkObserved
 	{
 	   public MissionDef Mission;
-	   public Tub.CollectibleInformation[] Collectibles;
-	   public bool ShowMinimap;
-	   public int MinimapSize;
-	   public Texture MinimapTexture;
+	   [HideInInspector]
+	   public Tub.CollectableInformation[] Collectibles;
 	   public bool CollectAllCollectables;
 	   public bool EndGameIfNoOneAlive;
 	   public bool SuccessIfAnyoneFinished;

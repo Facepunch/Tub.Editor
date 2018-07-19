@@ -6,9 +6,9 @@ using System.Collections.Generic;
 namespace Tub
 {
 	[System.Serializable]
-	public struct CollectibleInformation
+	public struct CollectableInformation
 	{
-	   public Tub.Collectible Coin;
+	   public Tub.Collectable Coin;
 	   public Sprite Sprite;
 	}
 }
