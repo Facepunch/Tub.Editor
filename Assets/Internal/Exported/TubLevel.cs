@@ -11,7 +11,9 @@ namespace Tub
 	   public MissionDef Mission;
 	   [HideInInspector]
 	   public Tub.CollectableInformation[] Collectibles;
+	   [Header("Progress Measure")]
 	   public bool CollectAllCollectables;
+	   [Header("End Conditions")]
 	   public bool EndGameIfNoOneAlive;
 	   public bool SuccessIfAnyoneFinished;
 	   public bool SuccessIfEveryoneFinished;
