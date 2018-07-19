@@ -5,9 +5,9 @@ using System.Collections.Generic;
 
 namespace Tub
 {
-	public class Collectable : Facepunch.Networked
+	[TriggersEvent( "collected", "The collectable has been collected" )]
+	public class Collectable : Tub.BaseEntity, INetworkObserved
 	{
-	   public GameObject PickupEffect;
 	   public Sprite HudIcon;
 	}
 }
