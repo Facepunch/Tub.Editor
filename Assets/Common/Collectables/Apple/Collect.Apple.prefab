@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 114899372248227724}
   - component: {fileID: 135200119767060660}
   - component: {fileID: 114129118711983110}
+  - component: {fileID: 114849115312728464}
   m_Layer: 0
   m_Name: Collect.Apple
   m_TagString: Untagged
@@ -127,8 +128,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fa193bb6a39eb447a03d7edd30a9fac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PickupEffect: {fileID: 1351809428961104, guid: 7da544d62a818ee4797b304a224bb04f,
-    type: 2}
+  Classification: 0
+  CanTakeDamage: 0
+  Health: 100
   HudIcon: {fileID: 21300000, guid: a824a872548d740408797a25aa19fc4b, type: 3}
 --- !u!114 &114137374021728530
 MonoBehaviour:
@@ -142,6 +144,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: {x: 0, y: 20, z: 0}
+--- !u!114 &114849115312728464
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1546135438725850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97f4522dbdda84649a0a3c3fc6c2bc97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Map:
+    Events:
+    - Name: collected
+      TypeName: object.create
+      Position: {x: 0, y: 1, z: 0}
+      Rotation: {x: 0, y: 0, z: 0}
+      Scale: {x: 0, y: 0, z: 0}
+      Amount: {x: 0, y: 0, z: 0}
+      StringValue: 
+      Transform: {fileID: 0}
+      PositionType: 0
+      Prefab: {fileID: 1351809428961104, guid: 7da544d62a818ee4797b304a224bb04f, type: 2}
+      Object: {fileID: 0}
+      Objects: []
+      Boolean: 
+    editorselected: collected
 --- !u!114 &114899372248227724
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -157,9 +186,10 @@ MonoBehaviour:
   group: 0
   OwnerShipWasTransfered: 0
   prefixBackup: -1
-  synchronization: 0
+  synchronization: 3
   ownershipTransfer: 0
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 114129118711983110}
   ObservedComponentsFoldoutOpen: 1
   viewIdField: 0
   instantiationId: -1

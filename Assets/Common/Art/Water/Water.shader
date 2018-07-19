@@ -59,27 +59,17 @@
 				o.Metallic = _Metallic;
 				o.Smoothness = _Smooth;
 
-				float4 bump = tex2D(_BumpMap, float2(IN.worldPos.x + _SinTime.x * _WaveSpeed, IN.worldPos.z) / 20);
-				bump += tex2D(_BumpMap, float2(IN.worldPos.z - _SinTime.x * _WaveSpeed, IN.worldPos.x - _SinTime.x * _WaveSpeed) / 100);
+				float4 bump = tex2D(_BumpMap, float2(IN.worldPos.x + _Time.x * _WaveSpeed, IN.worldPos.z) / 20);
+				bump += tex2D(_BumpMap, float2(IN.worldPos.z - _Time.x * _WaveSpeed, IN.worldPos.x - _SinTime.x * _WaveSpeed) / 100);
 
 				bump /= 2;
 
 				o.Normal = UnpackNormal(lerp(0.5, bump, _Roughness));
 
-				if (bump.z < 0.4)
+				if (bump.z < _Color2.b)
 				{
-					o.Albedo = _Color2;
-					o.Metallic = 0.6;
-					o.Smoothness = 0.4;
+					o.Emission = 1 * _Color2.a * 100;
 				}
-
-				if (bump.y > 0.6)
-				{
-					o.Albedo = _Color3;
-					o.Metallic = 0.3;
-					o.Smoothness = 0.2;
-				}
-
 
 				
 
