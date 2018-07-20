@@ -64,7 +64,7 @@ namespace Tub
         private static void RunUploader( string fullName )
         {
             Debug.Log( $"Running {Application.dataPath}/../Workshop/WorkshopPublisher.exe" );
-            System.Diagnostics.Process.Start( $"{Application.dataPath}/../Workshop/WorkshopPublisher.exe", fullName );
+            System.Diagnostics.Process.Start( $"{Application.dataPath}/../Workshop/WorkshopPublisher.exe", $"\"{fullName}\"" );
         }
 
         static void CreateMetaFile( string filename, TubLevel tubLevel )
