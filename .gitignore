@@ -6,6 +6,7 @@
 Assets/AssetStoreTools*
 Assets/ProBuilder Data/
 TempBundleBuild
+TempWorkshop
 
 # Visual Studio cache directory
 .vs/

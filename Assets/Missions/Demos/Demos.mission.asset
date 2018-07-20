@@ -12,9 +12,10 @@ MonoBehaviour:
   m_Name: Demos.mission
   m_EditorClassIdentifier: 
   Identifier: demos
-  Name: Demo Levels
-  Description: Hello this is my sample mission, how are you
-  Help: This is some help that will show to help you do the sample mission.
-  TileImage: {fileID: 21300000, guid: 3fb295796a8731741b0fb619ea9d698c, type: 3}
-  HeadlineImage: {fileID: 21300000, guid: dcc36bdbf2a54af40b6590e43ffb16e1, type: 3}
+  Name: Demo Level
+  Description: These are small sample maps that are meant to show how to implement
+    specific features in your own levels.
+  Help: 
+  TileImage: {fileID: 21300000, guid: cb845d030e5e1b24dae762347e0b6d8e, type: 3}
+  HeadlineImage: {fileID: 21300000, guid: 1b717fad88f78ba43b4b233f7542c43f, type: 3}
   HeadlineVideo: {fileID: 0}
