@@ -17,14 +17,21 @@ namespace Tub
             set { EditorPrefs.SetString( "tubexe", value ); }
         }
 
+        static void CheckExport( TubLevel level )
+        {
+            if ( level == null ) throw new System.Exception( "No TubLevel component" );
+            if ( string.IsNullOrEmpty( level.UniqueIdentifier ) ) throw new System.Exception( "TubLevel.UniqueIdentifier is blank - it needs to be a unique indientier" );
+            if ( string.IsNullOrEmpty( level.Title ) ) throw new System.Exception( "TubLevel.Title is empty" );
+            if ( level.Icon != null && (level.Icon.width != 512 || level.Icon.height != 512)  ) throw new System.Exception( "TubLevel.Icon should be 512x512" );
+        }
+
         [MenuItem( "Tub/Export", validate = true )]
         static public bool ExportThisMapValidate()
         {
             var tubLevel = Object.FindObjectOfType<TubLevel>();
-            if ( tubLevel == null ) return false;
-            if ( tubLevel.Mission == null ) return false;
+            CheckExport( tubLevel );
 
-            var targetName = EditorPrefs.GetString( $"Save{tubLevel.Mission.Identifier}As" );
+            var targetName = EditorPrefs.GetString( $"Save{tubLevel.UniqueIdentifier}As" );
             return !string.IsNullOrEmpty( targetName );
         }
 
@@ -33,10 +40,9 @@ namespace Tub
         static public void ExportThisMap()
         {
             var tubLevel = Object.FindObjectOfType<TubLevel>();
-            if ( tubLevel == null )
-                throw new System.Exception( "You need a TubLevel component to export a map" );
+            CheckExport( tubLevel );
 
-            var targetName = EditorPrefs.GetString( $"Save{tubLevel.Mission.Identifier}As" );
+            var targetName = EditorPrefs.GetString( $"Save{tubLevel.UniqueIdentifier}As" );
             if ( string.IsNullOrEmpty( targetName ) )
             {
                 ExportThisMapAs();
@@ -50,11 +56,7 @@ namespace Tub
         static public void ExportMapAs( string targetName )
         { 
             var tubLevel = Object.FindObjectOfType<TubLevel>();
-            if ( tubLevel == null )
-                throw new System.Exception( "You need a TubLevel component to export a map" );
-
-            if ( tubLevel.Mission == null )
-                throw new System.Exception( "Your TubLevel doesn't have a mission set" );
+            CheckExport( tubLevel );
 
             EditorUtility.DisplayProgressBar( "Exporting Map", "...", 0.0f );
 
@@ -74,17 +76,10 @@ namespace Tub
 
             var sceneBundle = new AssetBundleBuild
             {
-                assetBundleName = $"{tubLevel.Mission.Identifier}.map",
+                assetBundleName = $"{tubLevel.UniqueIdentifier}.map",
                 assetNames = new[] { scene.path }
             };
 
-            var metaBundle = new AssetBundleBuild
-            {
-                assetBundleName = $"{tubLevel.Mission.Identifier}.meta",
-                assetNames = new[] { UnityEditor.AssetDatabase.GetAssetPath( tubLevel.Mission ) }
-            };
-
-            bundles.Add( metaBundle );
             bundles.Add( sceneBundle );
 
             if ( !System.IO.Directory.Exists( "TempBundleBuild" ) )
@@ -96,26 +91,22 @@ namespace Tub
 
             UnityEngine.Debug.Log( $"Created bundles in {timer.Elapsed.TotalSeconds:0.00} seconds" );
 
+            byte[] thumb = new byte[0];
 
-            var metaBundleInfo = new System.IO.FileInfo( $"TempBundleBuild/{metaBundle.assetBundleName}" );
+            if ( tubLevel.Icon != null )
+            {
+                thumb = tubLevel.Icon.EncodeToPNG();
+            }
+
             var sceneBundleInfo = new System.IO.FileInfo( $"TempBundleBuild/{sceneBundle.assetBundleName}" );
 
             var missionHeader = new MissionHeader
             {
-                Version = 1,
-
-                Meta = new MissionHeader.Bundle
-                {
-                    Size = metaBundleInfo.Length
-                },
-
-                Scenes = new[]
-                {
-                new MissionHeader.Bundle
-                {
-                    Size = sceneBundleInfo.Length
-                }
-            }
+                Version = 2,
+                BundleSize = (int) sceneBundleInfo.Length,
+                ThumbSize = thumb.Length,
+                Title = tubLevel.Title,
+                Description = tubLevel.Description
             };
 
             var json = JsonUtility.ToJson( missionHeader );
@@ -132,7 +123,7 @@ namespace Tub
                 using ( var writer = new System.IO.BinaryWriter( stream ) )
                 {
                     writer.Write( json );
-                    writer.Write( System.IO.File.ReadAllBytes( $"TempBundleBuild/{metaBundle.assetBundleName}" ) );
+                    writer.Write( thumb );
                     writer.Write( System.IO.File.ReadAllBytes( $"TempBundleBuild/{sceneBundle.assetBundleName}" ) );
                 }
             }
@@ -145,17 +136,13 @@ namespace Tub
         static public void ExportThisMapAs()
         {
             var tubLevel = Object.FindObjectOfType<TubLevel>();
-            if ( tubLevel == null )
-                throw new System.Exception( "You need a TubLevel component to export a map" );
-
-            if ( tubLevel.Mission == null )
-                throw new System.Exception( "Your TubLevel doesn't have a mission set" );
+            CheckExport( tubLevel );
 
             var target = EditorUtility.SaveFilePanel( "Export Map As..", "", "", "tub" );
 
             if ( !string.IsNullOrEmpty( target ) )
             {
-                EditorPrefs.SetString( $"Save{tubLevel.Mission.Identifier}As", target );
+                EditorPrefs.SetString( $"Save{tubLevel.UniqueIdentifier}As", target );
                 ExportThisMap();
             }
         }
@@ -223,14 +210,10 @@ namespace Tub
     {
         public int Version;
 
-        public Bundle Meta;
-        public Bundle[] Scenes;
-
-        [System.Serializable]
-        public class Bundle
-        {
-            public long Size;
-        }
+        public string Title;
+        public string Description;
+        public int ThumbSize;
+        public int BundleSize;
     }
 
 }

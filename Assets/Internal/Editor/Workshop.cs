@@ -26,9 +26,6 @@ namespace Tub
             if ( tubLevel == null )
                 throw new System.Exception( "You need a TubLevel component to export a map" );
 
-            if ( tubLevel.Mission == null )
-                throw new System.Exception( "Your TubLevel doesn't have a mission set" );
-
             if ( System.IO.Directory.Exists( "TempWorkshop" ) )
                 System.IO.Directory.Delete( "TempWorkshop", true );
 
@@ -51,13 +48,14 @@ namespace Tub
 
         private static void CopyPreviewImage( string v, TubLevel tubLevel )
         {
-            string assetPath = AssetDatabase.GetAssetPath( tubLevel.Mission.TileImage.texture );
+            string assetPath = AssetDatabase.GetAssetPath( tubLevel.Icon );
             var tImporter = AssetImporter.GetAtPath( assetPath ) as TextureImporter;
             tImporter.isReadable = true;
+            tImporter.textureCompression = TextureImporterCompression.Uncompressed;
             AssetDatabase.ImportAsset( assetPath );
             AssetDatabase.Refresh();
             
-            var pngData = tubLevel.Mission.TileImage.texture.EncodeToPNG();
+            var pngData = tubLevel.Icon.EncodeToPNG();
             System.IO.File.WriteAllBytes( v, pngData );
         }
 
@@ -72,10 +70,10 @@ namespace Tub
             var meta = new MetaFile
             {
                 AppId = 790910,
-                Title = tubLevel.Mission.Name,
-                Description = tubLevel.Mission.Description,
+                Title = tubLevel.Title,
+                Description = tubLevel.Description,
                 Meta = "{}",
-                Tags = new[] { "Mission", "v1" },
+                Tags = new[] { "Mission", "v2" },
                 KeyValues = new Dictionary<string, string[]>()
             };
 

@@ -8,7 +8,13 @@ namespace Tub
 	[RequireComponent( typeof(Networker) )]
 	public class TubLevel : Facepunch.Networked, INetworkObserved
 	{
-	   public MissionDef Mission;
+	   [Header("Information")]
+	   public string UniqueIdentifier;
+	   public string Title;
+	   public int Version;
+	   public Texture2D Icon;
+	   public string Description;
+	   public string Help;
 	   [HideInInspector]
 	   public Tub.CollectableInformation[] Collectibles;
 	   [Header("Progress Measure")]
