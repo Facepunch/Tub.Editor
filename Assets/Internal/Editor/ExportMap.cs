@@ -103,6 +103,7 @@ namespace Tub
             var missionHeader = new MissionHeader
             {
                 Version = 2,
+                Identifier = tubLevel.UniqueIdentifier,
                 BundleSize = (int) sceneBundleInfo.Length,
                 ThumbSize = thumb.Length,
                 Title = tubLevel.Title,
@@ -127,7 +128,6 @@ namespace Tub
                     writer.Write( System.IO.File.ReadAllBytes( $"TempBundleBuild/{sceneBundle.assetBundleName}" ) );
                 }
             }
-
 
             EditorUtility.ClearProgressBar();
         }
@@ -212,6 +212,8 @@ namespace Tub
 
         public string Title;
         public string Description;
+        public string Identifier;
+
         public int ThumbSize;
         public int BundleSize;
     }
