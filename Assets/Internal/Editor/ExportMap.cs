@@ -104,6 +104,7 @@ namespace Tub
             {
                 Version = 2,
                 Identifier = tubLevel.UniqueIdentifier,
+                MapVersion = tubLevel.Version,
                 BundleSize = (int) sceneBundleInfo.Length,
                 ThumbSize = thumb.Length,
                 Title = tubLevel.Title,
@@ -211,6 +212,7 @@ namespace Tub
         public int Version;
 
         public string Title;
+        public int MapVersion;
         public string Description;
         public string Identifier;
 
