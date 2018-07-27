@@ -8,7 +8,7 @@ namespace Tub
 	public class BaseCarry : Tub.BaseHurtable, INetworkObserved
 	{
 	   [Header("Holding")]
-	   public AnimatorOverrideController HoldType;
+	   public Tub.HoldType HoldType;
 	   public Transform LocalHold;
 	}
 }
