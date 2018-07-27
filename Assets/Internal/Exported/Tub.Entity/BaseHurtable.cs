@@ -10,6 +10,7 @@ namespace Tub
 	public class BaseHurtable : Tub.BaseEntity, INetworkObserved
 	{
 	   [Header("Hurtable")]
+	   public bool CanTakeDamage;
 	   public float Health;
 	}
 }

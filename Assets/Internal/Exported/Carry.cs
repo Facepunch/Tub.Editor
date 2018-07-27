@@ -7,8 +7,6 @@ namespace Tub
 {
 	public class Carry : Tub.BaseCarry, INetworkObserved, INetworkTakeover
 	{
-	   public string ObjectName;
-	   public Transform LeftHand;
-	   public Transform RightHand;
+	   public string DisplayName;
 	}
 }
