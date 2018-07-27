@@ -26,19 +26,14 @@ namespace Facepunch
             initialized = true;
 
             var mb = property.serializedObject.targetObject as Component;
-            if ( mb == null )
-            {
-                Triggers = new TriggersEventAttribute[0];
-                return;
-            }
+            if ( mb == null ) return;
 
             var allc = mb.GetComponents<Component>();
 
-            Triggers = allc.Where( x => x != null )
-                            .Select( x => x.GetType() )
-                            .SelectMany( x => x.GetCustomAttributes( typeof( TriggersEventAttribute ), true ) )
-                            .Cast<TriggersEventAttribute>()
-                            .ToArray();
+            Triggers = allc.Select( x => x.GetType() )
+                .SelectMany( x => x.GetCustomAttributes( typeof( TriggersEventAttribute ), true ) )
+                .Cast<TriggersEventAttribute>()
+                .ToArray();
         }
 
 

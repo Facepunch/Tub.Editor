@@ -22,6 +22,7 @@ namespace Facepunch
         public GameObject Prefab;
 
         public UnityEngine.Object Object;
+        public UnityEngine.Object Object2;
         public UnityEngine.Object[] Objects;
 
         public bool[] Boolean;

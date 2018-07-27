@@ -14,6 +14,10 @@ namespace Facepunch
         {
             if ( e.Animation == null ) return;
 
+            var ac = e.Object2 as AnimationClip;
+            if ( ac != null )
+                e.Animation.clip = ac;
+
             e.Animation.Play( PlayMode.StopAll );
         }
 
@@ -21,7 +25,7 @@ namespace Facepunch
         public override void Inspector()
         {
             ObjectField<Animation>( nameof( EventDefinition.Object ), "Animation" );
-          //  PropertyField( nameof( EventDefinition.StringValue ), "Trigger Name" ); // TODO - Animation Clip?
+            ObjectField<AnimationClip>( nameof( EventDefinition.Object2 ), "Animation Clip" );
         }
 #endif
     }
