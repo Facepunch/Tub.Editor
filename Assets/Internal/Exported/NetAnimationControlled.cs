@@ -26,9 +26,5 @@ namespace Tub
 	   {
 	   }
 
-	   public override void SetClip( string name )
-	   {
-	   }
-
 	}
 }
