@@ -6,20 +6,27 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: Smoke
-  m_Shader: {fileID: 203, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHABLEND_ON _FADING_ON
+  m_Name: LaserRed
+  m_Shader: {fileID: 211, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _ALPHABLEND_ON _COLORADDSUBDIFF_ON _EMISSION _FADING_ON _GLOSSYREFLECTIONS_OFF
+    _SPECULARHIGHLIGHTS_OFF
   m_LightmapFlags: 0
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    RenderType: Transparent
+  disabledShaderPasses:
+  - ALWAYS
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
-    - _BumpMap:
+    - _AlphaTex:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _BumpMap:
+        m_Texture: {fileID: 2800000, guid: 61c59d65e2b1c2b449431c23f8c60423, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -36,11 +43,11 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
+        m_Scale: {x: 10, y: 100}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: a48defb30f5fefc4da5bab824fbc31d8, type: 3}
-        m_Scale: {x: 1, y: 1}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 10, y: 100}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
@@ -57,40 +64,54 @@ Material:
     m_Floats:
     - _BlendOp: 0
     - _BumpScale: 1
-    - _CameraFadingEnabled: 1
+    - _CameraFadingEnabled: 0
     - _CameraFarFadeDistance: 2
-    - _CameraNearFadeDistance: 0.1
+    - _CameraNearFadeDistance: 1
+    - _ColorMask: 15
+    - _ColorMode: 1
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
-    - _DistortionBlend: 0
+    - _DistortionBlend: 0.912
     - _DistortionEnabled: 0
     - _DistortionStrength: 1
     - _DistortionStrengthScaled: 0.1
-    - _DstBlend: 10
-    - _EmissionEnabled: 0
+    - _DstBlend: 1
+    - _EmissionEnabled: 1
+    - _EmissionScaleUI: 0.1
     - _FlipbookMode: 0
     - _GlossMapScale: 1
-    - _Glossiness: 0.064
-    - _GlossyReflections: 1
-    - _InvFade: 3
-    - _LightingEnabled: 1
-    - _Metallic: 0.01
-    - _Mode: 2
+    - _Glossiness: 0
+    - _GlossyReflections: 0
+    - _InvFade: 1.693
+    - _LightingEnabled: 0
+    - _Metallic: 0
+    - _Mode: 4
     - _OcclusionStrength: 1
-    - _Parallax: 0.02
+    - _Parallax: 0.0203
     - _SmoothnessTextureChannel: 0
     - _SoftParticlesEnabled: 1
-    - _SoftParticlesFarFadeDistance: 0.2
+    - _SoftParticlesFarFadeDistance: 0.1
     - _SoftParticlesNearFadeDistance: 0
-    - _SpecularHighlights: 1
+    - _SpecularHighlights: 0
     - _SrcBlend: 5
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _TexPower: 0
+    - _TriplanarSpace: 0
     - _UVSec: 0
+    - _UseUIAlphaClip: 0
+    - _UsingMetallicGlossMap: 0
+    - _VertexColorStrength: 0
     - _ZWrite: 0
     m_Colors:
-    - _CameraFadeParams: {r: 0.1, g: 0.5263158, b: 0, a: 0}
+    - _CameraFadeParams: {r: 0, g: Infinity, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmisColor: {r: 0, g: 0, b: 0, a: 1}
-    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SoftParticleFadeParams: {r: 0, g: 5, b: 0, a: 0}
+    - _ColorAddSubDiff: {r: 1, g: 0, b: 0, a: 0}
+    - _EmissionColor: {r: 5.992157, g: 0, b: 0, a: 0.1}
+    - _EmissionColorUI: {r: 1, g: 0.92156863, b: 0.23137255, a: 1}
+    - _SoftParticleFadeParams: {r: 0, g: 10, b: 0, a: 0}
     - _TintColor: {r: 1, g: 1, b: 1, a: 1}
