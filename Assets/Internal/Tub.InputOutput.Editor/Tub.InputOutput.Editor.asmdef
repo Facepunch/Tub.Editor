@@ -2,6 +2,7 @@
     "name": "Tub.InputOutput.Editor",
     "references": [
         "Tub.InputOutput",
+        "Photon.Main",
         "Tub.Player",
         "Facepunch.Photon",
         "Facepunch.Unity.Editor"

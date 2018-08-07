@@ -32,10 +32,10 @@ namespace Tub.InputOutput
         {
             EditorGUILayout.PropertyField( serializedObject.FindProperty( "CurrentMale" ) );
 
-            if ( FemaleSocket.CurrentMale != null )
-            {
-                FemaleSocket.CurrentMale.transform.SetPositionAndRotation( FemaleSocket.MountPoint.position, FemaleSocket.MountPoint.rotation );
-            }
+#if !TUB_EDITOR
+
+            FemaleSocket.UpdateMountedPosition();
+#endif
 
             EditorGUILayout.Space();
 
