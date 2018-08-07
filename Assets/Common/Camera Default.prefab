@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114462328753438018}
   - component: {fileID: 114565707017491272}
   - component: {fileID: 114709172647818274}
+  - component: {fileID: 114352606009485210}
   m_Layer: 17
   m_Name: Camera Default
   m_TagString: MainCamera
@@ -54,8 +55,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1573337946128236}
-  m_LocalRotation: {x: -0.23103407, y: 0.19195592, z: -0.046552002, w: -0.9526852}
-  m_LocalPosition: {x: -1.8457094, y: 1.0714724, z: 13.545188}
+  m_LocalRotation: {x: -0.08251771, y: -0.9086671, z: 0.215481, w: -0.34796977}
+  m_LocalPosition: {x: -14.844614, y: 3.9476104, z: 3.9475174}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4734093775309776}
@@ -122,6 +123,22 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1573337946128236}
   m_Enabled: 1
+--- !u!114 &114352606009485210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1573337946128236}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3c901e648b677e14bb57bbe9e265ead5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shader: {fileID: 4800000, guid: 929a50f02b21eb643bc7740ca88a63d4, type: 3}
+  shaderTag: RenderType
+  texelsPerMeter: 256
+  overlayOpacity: 0.9
+  showHUD: 1
 --- !u!114 &114462328753438018
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -168,6 +185,7 @@ MonoBehaviour:
       size: 256
       exposure: 0.12
     overlaySettings:
+      linearDepth: 0
       motionColorIntensity: 4
       motionGridSize: 64
       colorBlindnessType: 0

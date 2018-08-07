@@ -1,0 +1,200 @@
+fileFormatVersion: 2
+guid: 7fbb7bfa3e0b92840933e5d89959c1f6
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: CardboardBoxGib01_LOD0
+    100002: CardboardBoxGib01_LOD1
+    100004: CardboardBoxGib01_LOD2
+    100006: CardboardBoxGib02_LOD0
+    100008: CardboardBoxGib02_LOD1
+    100010: CardboardBoxGib02_LOD2
+    100012: CardboardBoxGib03_LOD0
+    100014: CardboardBoxGib03_LOD1
+    100016: CardboardBoxGib03_LOD2
+    100018: CardboardBoxGib04_LOD0
+    100020: CardboardBoxGib04_LOD1
+    100022: CardboardBoxGib04_LOD2
+    100024: CardBoardBoxGib05_LOD0
+    100026: CardBoardBoxGib05_LOD1
+    100028: CardBoardBoxGib05_LOD2
+    100030: //RootNode
+    100032: CardboardBoxGib05_LOD0
+    100034: CardboardBoxGib06_LOD0
+    100036: CardboardBoxGib07_LOD0
+    100038: CardboardBoxGib08_LOD0
+    400000: CardboardBoxGib01_LOD0
+    400002: CardboardBoxGib01_LOD1
+    400004: CardboardBoxGib01_LOD2
+    400006: CardboardBoxGib02_LOD0
+    400008: CardboardBoxGib02_LOD1
+    400010: CardboardBoxGib02_LOD2
+    400012: CardboardBoxGib03_LOD0
+    400014: CardboardBoxGib03_LOD1
+    400016: CardboardBoxGib03_LOD2
+    400018: CardboardBoxGib04_LOD0
+    400020: CardboardBoxGib04_LOD1
+    400022: CardboardBoxGib04_LOD2
+    400024: CardBoardBoxGib05_LOD0
+    400026: CardBoardBoxGib05_LOD1
+    400028: CardBoardBoxGib05_LOD2
+    400030: //RootNode
+    400032: CardboardBoxGib05_LOD0
+    400034: CardboardBoxGib06_LOD0
+    400036: CardboardBoxGib07_LOD0
+    400038: CardboardBoxGib08_LOD0
+    2100000: 01 - Default
+    2100002: default
+    2100004: 02 - Default
+    2300000: CardboardBoxGib01_LOD0
+    2300002: CardboardBoxGib01_LOD1
+    2300004: CardboardBoxGib01_LOD2
+    2300006: CardboardBoxGib02_LOD0
+    2300008: CardboardBoxGib02_LOD1
+    2300010: CardboardBoxGib02_LOD2
+    2300012: CardboardBoxGib03_LOD0
+    2300014: CardboardBoxGib03_LOD1
+    2300016: CardboardBoxGib03_LOD2
+    2300018: CardboardBoxGib04_LOD0
+    2300020: CardboardBoxGib04_LOD1
+    2300022: CardboardBoxGib04_LOD2
+    2300024: CardBoardBoxGib05_LOD0
+    2300026: CardBoardBoxGib05_LOD1
+    2300028: CardBoardBoxGib05_LOD2
+    2300030: CardboardBoxGib05_LOD0
+    2300032: CardboardBoxGib06_LOD0
+    2300034: CardboardBoxGib07_LOD0
+    2300036: CardboardBoxGib08_LOD0
+    3300000: CardboardBoxGib01_LOD0
+    3300002: CardboardBoxGib01_LOD1
+    3300004: CardboardBoxGib01_LOD2
+    3300006: CardboardBoxGib02_LOD0
+    3300008: CardboardBoxGib02_LOD1
+    3300010: CardboardBoxGib02_LOD2
+    3300012: CardboardBoxGib03_LOD0
+    3300014: CardboardBoxGib03_LOD1
+    3300016: CardboardBoxGib03_LOD2
+    3300018: CardboardBoxGib04_LOD0
+    3300020: CardboardBoxGib04_LOD1
+    3300022: CardboardBoxGib04_LOD2
+    3300024: CardBoardBoxGib05_LOD0
+    3300026: CardBoardBoxGib05_LOD1
+    3300028: CardBoardBoxGib05_LOD2
+    3300030: CardboardBoxGib05_LOD0
+    3300032: CardboardBoxGib06_LOD0
+    3300034: CardboardBoxGib07_LOD0
+    3300036: CardboardBoxGib08_LOD0
+    4300000: CardboardBoxGib02_LOD0
+    4300002: CardboardBoxGib03_LOD0
+    4300004: CardboardBoxGib04_LOD0
+    4300006: CardboardBoxGib01_LOD0
+    4300008: CardboardBoxGib01_LOD1
+    4300010: CardboardBoxGib02_LOD1
+    4300012: CardboardBoxGib03_LOD1
+    4300014: CardboardBoxGib04_LOD1
+    4300016: CardboardBoxGib01_LOD2
+    4300018: CardboardBoxGib02_LOD2
+    4300020: CardboardBoxGib03_LOD2
+    4300022: CardboardBoxGib04_LOD2
+    4300024: CardBoardBoxGib05_LOD0
+    4300026: CardBoardBoxGib05_LOD1
+    4300028: CardBoardBoxGib05_LOD2
+    4300030: CardboardBoxGib08_LOD0
+    4300032: CardboardBoxGib05_LOD0
+    4300034: CardboardBoxGib06_LOD0
+    4300036: CardboardBoxGib07_LOD0
+    20500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 01 - Default
+    second: {fileID: 2100000, guid: 807dc4e90d26f56418368e054369f057, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 02 - Default
+    second: {fileID: 2100000, guid: 807dc4e90d26f56418368e054369f057, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages:
+    - 0.25
+    - 0.125
+    - 0.01
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 0
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

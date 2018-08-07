@@ -18,7 +18,7 @@
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
-			#pragma multi_compile_fog
+			#pragma multi_compile _ HIDE_TRIGGERS
 			
 			#include "UnityCG.cginc"
 
@@ -47,11 +47,17 @@
 				o.uv = TRANSFORM_TEX(v.texcoord, _MainTex);
 				UNITY_TRANSFER_FOG(o,o.vertex);
 				o.worldNormal = UnityObjectToWorldNormal(v.normal);
+
 				return o;
 			}
 			
 			fixed4 frag (v2f i) : SV_Target
 			{
+
+#ifdef HIDE_TRIGGERS
+				clip(-1);
+				return 0;
+#else 
 				fixed4 col = tex2D(_MainTex, i.uv) * _Color;
 				UNITY_APPLY_FOG(i.fogCoord, col);
 
@@ -59,6 +65,7 @@
 				col.rgb *= light;
 
 				return col;
+#endif
 			}
 			ENDCG
 		}
