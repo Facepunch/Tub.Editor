@@ -22,6 +22,14 @@ Material:
         m_Texture: {fileID: 2800000, guid: 419be8f89b8207d4c869032b74e39aa4, type: 3}
         m_Scale: {x: 0, y: 1}
         m_Offset: {x: 0.62, y: 0}
+    - _BumpTex:
+        m_Texture: {fileID: 2800000, guid: 419be8f89b8207d4c869032b74e39aa4, type: 3}
+        m_Scale: {x: 0.03, y: 0.02355}
+        m_Offset: {x: 0, y: 0}
+    - _DepthRampTex:
+        m_Texture: {fileID: 2800000, guid: 3091dc9137ce67441924e136660da6c2, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 800, y: 800}
@@ -39,11 +47,15 @@ Material:
         m_Scale: {x: 800, y: 800}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 800, y: 800}
+        m_Texture: {fileID: 2800000, guid: 1a1728bd4a511284f84a35ffb9bb1dfe, type: 3}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: 6c3ba757e36cb2f4fb63d20fef01ee96, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -57,8 +69,14 @@ Material:
     m_Floats:
     - _BumpScale: 1
     - _Cutoff: 0.5
+    - _DepthFactor: 0.1
     - _DetailNormalMapScale: 0.2
+    - _DistortDepth: 0.02
+    - _DistortStrength: 2
     - _DstBlend: 0
+    - _EdgeScale: 0.2
+    - _EdgeSpeed: 2
+    - _ExtraHeight: 0
     - _GlossMapScale: 1
     - _Glossiness: 0.859
     - _GlossyReflections: 1
@@ -71,11 +89,16 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
+    - _SurfaceDistort: 0.2
+    - _SurfaceStrength: 0.02
     - _UVSec: 0
-    - _WaveSpeed: 5
+    - _WaveAmp: 0.3
+    - _WaveSpeed: 3
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.12941161, g: 0.5882353, b: 0.9529411, a: 1}
+    - _Color: {r: 0, g: 0.30588245, b: 1, a: 0.38431373}
     - _Color2: {r: 0.4196076, g: 0.5333333, b: 0.6156863, a: 0.07058824}
     - _Color3: {r: 0.81960785, g: 0.7764706, b: 0.81960785, a: 1}
+    - _EdgeColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Highlight: {r: 5.207844, g: 5.207844, b: 5.207844, a: 0.25882354}
