@@ -31,3 +31,9 @@ It'll ask you to find the Tub.exe, then bundle the map up and let you play. The 
 Tub Forums: https://forum.facepunch.com/f/tub/
 
 Discord: https://discord.gg/N4QtNeJ
+
+## License
+
+You can do whatever you want with the code in this repository. Use it, change it, sell it, we don't care. By code we mean all .cs and all .shader files.
+
+The other assets, the art and content, you shouldn't use those in your own game. The exception to this is any textures or materials you need to make a .shader work - feel free to take and reuse those.
