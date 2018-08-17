@@ -5,8 +5,8 @@ using System.Collections.Generic;
 
 namespace Tub
 {
-	public class Water : MonoBehaviour
+	public class BaseNpc : Tub.BaseHurtable, INetworkObserved
 	{
-	   public GameObject WaterEnterEffect;
+	   public float Randomness;
 	}
 }

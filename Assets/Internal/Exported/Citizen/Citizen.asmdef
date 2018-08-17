@@ -1,0 +1,4 @@
+{
+    "name": "Citizen",
+    "references": ["Facepunch.System", "Facepunch.Unity", "Facepunch.EventMap", "Tub.Editor"]
+}

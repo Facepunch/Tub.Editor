@@ -11,5 +11,6 @@ namespace Tub
 	   Explosion = 1,
 	   Burn = 2,
 	   Melee = 3,
+	   Bite = 4,
 	}
 }

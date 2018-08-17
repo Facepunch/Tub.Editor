@@ -5,8 +5,8 @@ using System.Collections.Generic;
 
 namespace Tub
 {
-	public class Water : MonoBehaviour
+	public class HelpfulNpc : Tub.CitizenNpc, INetworkObserved
 	{
-	   public GameObject WaterEnterEffect;
+	   public bool WanderAround;
 	}
 }

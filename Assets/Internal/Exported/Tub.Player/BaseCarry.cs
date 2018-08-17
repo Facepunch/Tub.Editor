@@ -8,7 +8,10 @@ namespace Tub
 	public class BaseCarry : Tub.BaseHurtable, INetworkObserved
 	{
 	   [Header("Holding")]
-	   public Tub.HoldType HoldType;
-	   public Transform LocalHold;
+	   public CitizenHoldType HoldType;
+	   public Transform LeftHandPosition;
+	   public bool LeftHandIk;
+	   public Transform RightHandPosition;
+	   public bool RightHandIk;
 	}
 }

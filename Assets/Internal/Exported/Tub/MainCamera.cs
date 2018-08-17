@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace Tub
 {
-	public class MainCamera : MonoBehaviour
+	public class MainCamera : Facepunch.SingletonComponent<Tub.MainCamera>
 	{
 	}
 }

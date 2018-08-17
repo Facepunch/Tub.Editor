@@ -13,5 +13,6 @@ namespace Tub
 	   Burnt = 3,
 	   Drowned = 4,
 	   Suicide = 5,
+	   Bitten = 6,
 	}
 }

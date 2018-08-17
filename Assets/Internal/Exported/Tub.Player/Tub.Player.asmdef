@@ -1,4 +1,4 @@
 {
     "name": "Tub.Player",
-    "references": ["Facepunch.Photon", "Tub.Entity", "Facepunch.System", "Facepunch.Unity", "Facepunch.EventMap", "Tub.Editor"]
+    "references": ["Facepunch.Photon", "Tub.Entity", "Citizen", "Facepunch.System", "Facepunch.Unity", "Facepunch.EventMap", "Tub.Editor"]
 }
