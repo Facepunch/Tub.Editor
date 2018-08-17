@@ -1,4 +1,4 @@
-﻿Shader "Custom/Cable" 
+﻿Shader "Facepunch/Cable" 
 {
 	Properties 
 	{

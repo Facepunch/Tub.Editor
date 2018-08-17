@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 832d2aff31eccee4dbe1857c71014257
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - ImageEffectMaterial: {fileID: 2100000, guid: c72ec7131d4b6604582569c3aa8b2cf8,
+      type: 2}
+  - MeshRenderMaterial: {fileID: 2100000, guid: 5442aadb1d604784397e2370bdf87c6e,
+      type: 2}
+  - RenderTexture: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -335,7 +335,21 @@ MonoBehaviour:
       Object2: {fileID: 0}
       Objects: []
       Boolean: 
-    editorselected: die
+    - Name: takedamage
+      TypeName: damageflash
+      Position: {x: 0, y: 0, z: 0}
+      Rotation: {x: 0, y: 0, z: 0}
+      Scale: {x: 20, y: 0, z: 0}
+      Amount: {x: 30, y: 60, z: 0}
+      StringValue: 
+      Transform: {fileID: 0}
+      PositionType: 0
+      Prefab: {fileID: 0}
+      Object: {fileID: 0}
+      Object2: {fileID: 0}
+      Objects: []
+      Boolean: 
+    editorselected: takedamage
 --- !u!114 &114696460066610674
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -375,11 +389,11 @@ LODGroup:
   m_FadeMode: 0
   m_AnimateCrossFading: 0
   m_LODs:
-  - screenRelativeHeight: 0.09671413
+  - screenRelativeHeight: 0.0641234
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23677597408827822}
-  - screenRelativeHeight: 0.04642716
+  - screenRelativeHeight: 0.025153702
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 23614677422282774}

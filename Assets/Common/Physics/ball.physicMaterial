@@ -3,11 +3,11 @@
 --- !u!134 &13400000
 PhysicMaterial:
   m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: ball
-  dynamicFriction: 1
-  staticFriction: 1
-  bounciness: 0.6
+  dynamicFriction: 0.5
+  staticFriction: 0.5
+  bounciness: 0.8
   frictionCombine: 0
   bounceCombine: 3

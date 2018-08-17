@@ -31,7 +31,10 @@
 	{
 		Tags
 		{
-			"Queue" = "Transparent"
+			"Queue" = "Transparent-10"
+			"IgnoreProjector" = "True"
+			"RenderType" = "Transparent"
+		//	"LightMode" = "ForwardBase"
 		}
 
 		GrabPass
@@ -41,12 +44,15 @@
 
 		Pass
 		{
+			ZWrite On
+			Cull Off
 
 			CGPROGRAM
 			#pragma vertex vert
 			#pragma fragment frag
 			#pragma multi_compile_fog
 			#include "UnityCG.cginc"
+			#include "Lighting.cginc"
 
 			sampler2D _BumpTex;
 			float4 _BumpTex_ST;
@@ -150,8 +156,10 @@
 
 				if (normal.x > _Highlight.a)
 					albedo.rgb += _Highlight.rgb;
+			
+				albedo.rgb *= (unity_AmbientSky.rgb + unity_AmbientEquator.rgb  + unity_AmbientGround.rgb + _LightColor0.rgb ) * 0.33;
 
-				UNITY_APPLY_FOG( input.fogCoord, albedo );
+				UNITY_APPLY_FOG(input.fogCoord, albedo);
 
 				return albedo;
 
@@ -159,4 +167,6 @@
 			ENDCG
 		}
 	}
+
+	FallBack "Diffuse"
 }

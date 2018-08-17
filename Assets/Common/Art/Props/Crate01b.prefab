@@ -362,7 +362,21 @@ MonoBehaviour:
       Object2: {fileID: 0}
       Objects: []
       Boolean: 
-    editorselected: die
+    - Name: takedamage
+      TypeName: damageflash
+      Position: {x: 0, y: 0, z: 0}
+      Rotation: {x: 0, y: 0, z: 0}
+      Scale: {x: 20, y: 0, z: 0}
+      Amount: {x: 30, y: 60, z: 0}
+      StringValue: 
+      Transform: {fileID: 0}
+      PositionType: 0
+      Prefab: {fileID: 0}
+      Object: {fileID: 0}
+      Object2: {fileID: 0}
+      Objects: []
+      Boolean: 
+    editorselected: takedamage
 --- !u!205 &205146970017689782
 LODGroup:
   m_ObjectHideFlags: 1

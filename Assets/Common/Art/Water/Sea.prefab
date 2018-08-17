@@ -86,6 +86,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4019946563913496}
+  - component: {fileID: 114861277669445738}
+  - component: {fileID: 114027851981520020}
   m_Layer: 4
   m_Name: Water Mesh
   m_TagString: Untagged
@@ -278,6 +280,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4000, y: 1000, z: 4000}
   m_Center: {x: 0, y: -500, z: 0}
+--- !u!114 &114027851981520020
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1408878538091786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add9fe21dfe7dc240896ecf011f5c642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Movement: {x: 0, y: 0.3, z: 0}
+  Offset: {x: 0, y: -0.15, z: 0}
+  Speed: 0.4
+  Ease: 3
+  UseEaseOut: 0
+  EaseOut: 0
 --- !u!114 &114136159101838596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -289,6 +308,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94d23484bdfd2124ebf705ecbb41eb83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WaterEnterEffect: {fileID: 1351809428961104, guid: 3fb092916b890004cb6749277b0bb3d2,
+    type: 2}
 --- !u!114 &114471259106451152
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -324,3 +345,28 @@ MonoBehaviour:
     ReasonOthers: drowned
     ReasonSelf: You drowned
     Gib: 0
+--- !u!114 &114861277669445738
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1408878538091786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1561957e390c00a4ebd59f490ab15a56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  OwnerShipWasTransfered: 0
+  prefixBackup: -1
+  synchronization: 0
+  ownershipTransfer: 0
+  ObservedComponents: []
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 0
+  instantiationId: -1
+  currentMasterID: -1
+  isRuntimeInstantiated: 0
+  SyncTransforms: 0
+  Frozen: 0
