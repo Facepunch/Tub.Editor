@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: e44b96f50b1e1ea46a76196f43fc3445
+timeCreated: 1500395764
+licenseType: Pro
+ShaderImporter:
+  defaultTextures:
+  - _MainTex: {instanceID: 0}
+  - _TexelDensityGrad: {fileID: 2800000, guid: f4b5d8fbc0d3afc4a98470c78a165f84, type: 3}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
