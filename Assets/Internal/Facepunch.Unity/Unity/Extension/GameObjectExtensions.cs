@@ -19,5 +19,21 @@ namespace Facepunch
                 }
             }
         }
+
+        public static void DeleteAllChildren( this GameObject self )
+        {
+            for( int i = self.transform.childCount-1; i >= 0; i-- )
+            {
+                GameObject.Destroy( self.transform.GetChild( i ).gameObject );
+            }
+        }
+
+        public static U GetOrAddComponent<U>( this GameObject self ) where U : Component
+        {
+            var c = self.GetComponent<U>();
+            if ( c != null ) return c;
+
+            return self.AddComponent<U>();
+        }
     }
  }
